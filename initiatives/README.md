@@ -7,4 +7,4 @@ not been created.
 
 | Initiative | Status |
 |---|---|
-| [workflow-dashboard](workflow-dashboard/workflow-dashboard.md) | Planned — not started |
+| [workflow-dashboard](workflow-dashboard/workflow-dashboard.md) | Planned — not started; scope includes artifact-type and approval-state tracking from analysis through specification to implementation |

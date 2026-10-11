@@ -4,8 +4,9 @@
 - **Contract:**
   - **In:** `spec/workflow-state-contract.md` and the current agent workflow.
   - **Requires:** Review of project start, analysis, multi-session section
-    work, consolidation, creator interview, worklist execution, handoff,
-    pause, resume, and collaborator onboarding.
+    work, consolidation, creator interview, worklist execution, transition
+    from analysis to structured production specification to approved
+    implementation, handoff, pause, resume, and collaborator onboarding.
   - **Delivers:** `spec/user-journeys-and-automation-policy.md` describing
     user journeys, role/approval boundaries, reminders, long-running
     operations, interruption/recovery, and observable safety requirements.
@@ -23,6 +24,12 @@
     and cancelable, with errors surfaced rather than hidden.
   - Creative approvals, source edits, destructive changes, and external
     notifications have explicit authorization requirements.
+  - A specialist may only produce deliverables within its assigned task and
+    remit. Cross-discipline dependencies become explicit handoffs or separate
+    tasks; they do not authorize a specialist to expand scope.
+  - Automation cannot convert a memo or proposal into an approved
+    specification or implementation asset, or mark an asset implemented
+    without verifiable evidence.
   - Manual operation remains possible when hooks, a model, network, or
     notification service is unavailable.
 - **Tests:** Walkthrough review of normal, paused, interrupted, failed, and

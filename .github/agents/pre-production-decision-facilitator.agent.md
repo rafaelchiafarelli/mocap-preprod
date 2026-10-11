@@ -136,8 +136,21 @@ Rules for worklist quality:
 
 - Make tasks small and concrete enough that one later session or discipline
   can own them; avoid vague entries such as “develop the world.”
+- Name a discipline-native, production-facing specification as the task
+  deliverable (for example, a beat map, shot/coverage table, prop register,
+  set/layout spec, character requirements matrix, or sound cue sheet), not
+  merely “a memo.” State its required contents and an observable completion
+  condition.
 - Separate reversible exploration (for example, propose visual options) from
   committing to a creative choice or producing final assets.
+- Keep specification and implementation as separate tasks. An exploratory
+  task may produce structured planning documents, but must not create final
+  models, rendered scenes, mocap JSON, recorded audio, or other implementation
+  assets. Create or assign implementation work only after its specification
+  and relevant creative choices have creator approval, and only when a
+  registered execution agent or named human role is available. If no executor
+  exists, record that as a workflow capability gap; do not assign an analyst
+  outside its remit or fabricate a technical schema.
 - Mark a task `ready for exploration` only if it can proceed without
   contradicting an unresolved creator decision. Otherwise list the required
   decision and use `awaiting creator decision` or `blocked`.
@@ -149,11 +162,19 @@ Rules for worklist quality:
   remit covers the task. If no existing agent fits, flag the missing
   capability rather than assigning several agents; create or recommend a new
   specialist only when explicitly asked to extend the agent roster.
+- Match each task's discipline to that agent's stated remit before assigning
+  it. Do not route visual-development work to the performance/editorial
+  planner, or vice versa, merely because their outputs may inform each other.
+  Keep cross-discipline dependencies explicit while retaining one owner.
 - Preserve stable IDs and completed/in-progress statuses when updating an
   existing worklist. Flag conflicts instead of silently resetting status.
 - Do not treat a task's presence in this list as approval to make final
   creative decisions. Later sessions must read the brief, cite worklist IDs,
   report outputs, and return proposed decisions to the creator where needed.
+- Mark an exploratory specification `done` when its stated artifact and
+  completion condition are met, even if its proposal still awaits creator
+  approval; record that approval state distinctly and do not imply that
+  implementation may begin.
 
 At the end, identify the first one to three work packages that are truly
 ready to begin, explain why their dependencies are satisfied, and provide a

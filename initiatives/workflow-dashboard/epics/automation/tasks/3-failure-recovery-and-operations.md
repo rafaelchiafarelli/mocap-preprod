@@ -13,6 +13,9 @@
 - **Acceptance checks:**
   - Each operation exposes status, start/last update time, owner, checkpoint,
     failure cause, and supported recovery action.
+  - Recovery and retry operations preserve artifact type and approval state
+    and cannot turn partial planning output into a success-shaped
+    implementation-complete state.
   - Users can stop or disable automation without corrupting project data.
   - Retention, backup, restore, and deletion behavior is documented.
   - An operator unfamiliar with implementation can recover a test project

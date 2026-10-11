@@ -17,6 +17,9 @@
 - **Acceptance checks:**
   - Interrupted and restarted work reports last confirmed checkpoint and
     remaining steps.
+  - Checkpoints preserve artifact type, source/evidence links, approval
+    state, and any downstream implementation dependency; they do not promote
+    a memo or proposal into an approved specification or completed asset.
   - Partial writes, duplicate resume attempts, and stale state are detected
     and surfaced.
   - The user can pause, cancel, and manually resume.

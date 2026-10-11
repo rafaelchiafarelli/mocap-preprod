@@ -7,8 +7,9 @@
   - **Requires:** Explicit project identity and location; a safe way to
     inspect existing artifacts without overwriting them.
   - **Delivers:** A usable project-start flow and overview showing project
-    identity, workflow stage, expected artifacts, observed artifact status,
-    and next stage gate.
+    identity, workflow stage, expected artifacts, observed artifact status
+    and type (memo, structured specification, or implementation asset),
+    approval state, and next stage gate.
 - **Pre-work:** Architecture decision accepted; sample project fixtures
   covering empty, partial, complete, conflicting, and unreadable states.
 - **Out of scope:** Generating creative decisions; silently creating or
@@ -20,6 +21,9 @@
     state migration or write.
   - Missing, unreadable, stale, and conflicting files are visibly distinct
     from completed artifacts.
+  - The overview never presents a narrative memo as a completed
+    production-facing specification or a specification as an implemented
+    asset.
   - The view links users to the workflow explanation and next valid action.
 - **Tests:** Automated checks for project discovery and state rendering;
   manual onboarding by a collaborator unfamiliar with the workflow.

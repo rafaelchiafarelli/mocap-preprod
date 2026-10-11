@@ -10,7 +10,10 @@ safe and feasible.
 bounded background operations, or reminders—not a promise that an AI chat,
 model, remote editor, or user session remains alive indefinitely. No
 unattended creative approval, source rewrite, destructive action, or external
-notification without explicit authorization.
+notification without explicit authorization. Automation must preserve the
+distinction between analysis memos, approved production specifications, and
+implementation assets; completing one artifact must never imply another
+exists or is approved.
 
 **Epic gate:** Users can see an operation's status, last checkpoint, owner,
 next action, errors, and cancellation/recovery behavior. Manual resume remains

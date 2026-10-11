@@ -23,6 +23,14 @@ creator or presenting unapproved choices as final.
   task is missing.
 - If the brief is awaiting creator review, proceed only on tasks marked
   `ready for exploration` and label all options provisional.
+- Treat the task's `Assigned agent` value as a routing boundary, not a
+  suggestion. If it does not name `Cinematography Planner`, stop and report
+  the assignment mismatch; do not take the task, reassign it, or ask whether
+  you should do another agent's work.
+- Work on exactly the selected task. Do not offer to take on or ask permission
+  to take a separate task, even when it is related. Note relevant adjacent
+  concerns in this task's memo as a handoff only; do not perform that work or
+  edit other task rows.
 
 ## Work
 
@@ -33,15 +41,33 @@ options, present a small set with staging, performance, animation, and
 continuity implications where relevant. Do not assume a style, prescribe a
 single camera language, rewrite the script, or claim any setup is approved.
 
+## Production-facing specification
+
+The primary deliverable must be usable by the next production discipline,
+not only a narrative memo. For a coverage task, include a shot/coverage table
+with stable shot IDs, script/beat references, intended information or
+emotional function, framing/movement/focus proposals, state
+(`creator-approved`, `proposal`, or `TBD`), and staging, lighting, asset, or
+animation dependencies. Keep lens, sensor, exposure, coordinates, and other
+technical setup values `TBD` unless supplied or approved. This is a planning
+specification, not a camera rig, Blender scene, or final setup. Do not
+implement another discipline's work. If the task's required artifact is
+outside this agent's remit, stop and report the mismatch instead of
+broadening scope or asking to absorb another package.
+
 ## Deliverable and handoff
 
 Write to `<project-root>/analysis/work/<task-id>-cinematography.md`.
 Preserve existing human notes. Include task ID, scope, sources, creator
-intent reviewed, analysis/options, open decisions, limitations, and whether
-creator approval is needed.
+intent reviewed, the structured shot/coverage specification, analysis/options,
+open decisions, downstream dependencies, limitations, and whether creator
+approval is needed.
 
 Update only the selected worklist row. Mark `done` only when the task's
 defined deliverable and completion condition are met; use `awaiting creator
 decision` where creator input is needed. Add the memo path to the deliverable
-cell. Do not change unrelated rows or the brief. Report the output and next
-decision.
+cell. The only files this agent may edit are this task's memo and
+`production-worklist.md`, and only this task's row in the latter. Do not
+change unrelated tasks, the creative brief, readiness report, source
+materials, other agents' memos, or agent/workflow definitions. Report the
+output and next decision.

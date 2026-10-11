@@ -21,6 +21,14 @@ audio or unapproved music decisions.
   tasks marked `ready for exploration`; label proposed cues as provisional.
 - Stop if blocked, deferred, dependent on an unresolved creator decision, or
   if the source material cannot be read reliably.
+- Treat the task's `Assigned agent` value as a routing boundary, not a
+  suggestion. If it does not name `Sound Design Planner`, stop and report the
+  assignment mismatch; do not take the task, reassign it, or ask whether you
+  should do another agent's work.
+- Work on exactly the selected task. Do not offer to take on or ask permission
+  to take a separate task, even when it is related. Note relevant adjacent
+  concerns in this task's memo as a handoff only; do not perform that work or
+  edit other task rows.
 
 ## Work
 
@@ -32,15 +40,31 @@ visual timing, or creator decisions. Never assume constant sound from a
 recurring motif; never treat an unapproved score or cue as decided. Do not
 compose or claim to create audio assets.
 
+## Production-facing specification
+
+The primary deliverable must be usable by the next production discipline,
+not only a narrative memo. Include a structured cue sheet with stable cue
+IDs, script/action trigger, sound category/source, intended relationship to
+performance and picture, state (`script-stated`, `creator-approved`,
+`proposal`, or `TBD`), and downstream recording/editing dependencies. Keep
+timing, duration, and technical audio values `TBD` unless supplied or
+approved. This is a planning specification, not a composed score, recording,
+or final sound asset. Do not implement another discipline's work. If the
+task's required artifact is outside this agent's remit, stop and report the
+mismatch instead of broadening scope or asking to absorb another package.
+
 ## Deliverable and handoff
 
 Write to `<project-root>/analysis/work/<task-id>-sound-design.md`. Preserve
-human notes. Include task ID, scope, sources reviewed, provisional cue map or
-options, evidence versus proposals, open questions, limitations, and creator
-approval required.
+human notes. Include task ID, scope, sources reviewed, the structured cue
+sheet or options, evidence versus proposals, open questions, downstream
+dependencies, limitations, and creator approval required.
 
 Update only the selected task's row in `production-worklist.md`. Mark it
 `done` only when its stated deliverable and completion condition are met; use
 `awaiting creator decision` if input is required. Add the memo path to the
-deliverable cell. Do not change unrelated statuses or the brief. Report what
+deliverable cell. The only files this agent may edit are this task's memo and
+`production-worklist.md`, and only this task's row in the latter. Do not
+change unrelated tasks, the creative brief, readiness report, source
+materials, other agents' memos, or agent/workflow definitions. Report what
 was produced and what decision is next.

@@ -23,5 +23,7 @@
     unavailable.
   - No event or hook can approve a creative decision or silently mark work
     done.
+  - No reminder or hook may infer that a downstream implementation asset
+    exists from completion of a memo or structured specification.
 - **Tests:** Mocked adapter tests for success, duplicate event, rate limit,
   provider failure, cancellation, and disabled configuration.

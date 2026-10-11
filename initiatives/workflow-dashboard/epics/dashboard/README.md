@@ -8,8 +8,10 @@ work packages, and next actions.
 
 **Epic gate:** A second user can start or open a project, understand current
 progress and blockers, find source/handoff files, and determine what can
-safely happen next. The dashboard does not imply that a task or decision is
-complete without evidence in the state contract.
+safely happen next. It distinguishes narrative memos, production-facing
+specifications, and implementation assets, and shows each one's approval
+state. The dashboard does not imply that a task or decision is complete
+without evidence in the state contract.
 
 ## Task order
 

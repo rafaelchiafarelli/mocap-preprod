@@ -18,5 +18,9 @@
     specialist agents.
   - It distinguishes exploratory proposals from approved decisions and
     explains how to handle stale or conflicting state.
+  - It explains the difference between a narrative memo, a structured
+    production specification (for example, a shot list or prop register),
+    and an implementation asset (for example, a scene, simulation, or mocap
+    file); it also explains who may author and approve each.
 - **Tests:** Observed onboarding and handoff with a user not involved in
   implementation.

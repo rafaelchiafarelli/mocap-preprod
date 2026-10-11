@@ -87,10 +87,35 @@ agents in `.github/agents/`:
 Each work package names exactly one assigned agent in its `Assigned agent`
 column—never a team, multiple agents, or merely a suggested workstream. Each
 specialist is invoked for a specific project root and worklist task ID.
-It reads the creative brief, readiness findings, and relevant sources; writes
-a scoped memo under `<project-root>/analysis/work/`; and updates only its
-selected task's status and deliverable link. They develop options and
-production notes, not final assets or unapproved creative decisions.
+That assignment is a strict routing boundary: a specialist must stop and
+report a mismatch rather than take another agent's task, reassign itself, or
+ask the creator whether it should expand into another discipline. It may note
+an adjacent concern as a handoff, but may not do that work or edit another
+task. Specialists may edit only their own task memo and that task's worklist
+row; the brief, readiness report, source materials, and other tasks remain
+outside their editing scope.
+Each specialist reads the creative brief, readiness findings, and relevant
+sources; writes a scoped memo under `<project-root>/analysis/work/`; and
+updates only its selected task's status and deliverable link. They develop
+options and production-facing specifications, not only narrative commentary.
+Depending on the task, that artifact should be a usable beat map, shot list,
+prop/material register, set/layout specification, character requirements
+matrix, or sound cue sheet with stable IDs, source evidence, decision state,
+and downstream dependencies. Recommendations and unknowns must be explicit.
+These specs are not implementation assets: current specialists do not create
+final Blender scenes, models, simulations, recordings, or mocap JSON.
+Implementation is a separate task after the relevant specification and
+creative choices are creator-approved. If no registered execution agent or
+named human role fits, record the capability gap instead of asking a planner
+to implement outside its remit or inventing a technical schema.
+The current roster contains planning specialists only; it does not yet
+include agents that author final production files such as mocap JSON, Blender
+scenes, simulations, or rendered assets.
+
+These are agent instructions, not operating-system file permissions. Because
+specialists need to write their memo and worklist status, their editor tool
+still has workspace-level access; use a tool hook or other external control
+if hard file-level enforcement is required.
 
 The current TicTac brief is marked **Awaiting creator review**. Tasks explicitly
 marked `ready for exploration` may be explored as reversible, provisional

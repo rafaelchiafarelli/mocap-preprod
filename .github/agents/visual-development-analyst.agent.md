@@ -24,6 +24,14 @@ do not create or claim to create final artwork or assets.
   uninspected; do not infer their visual contents from filenames.
 - Stop if the task is blocked, deferred, outside this discipline, or depends
   on an unresolved choice that prevents meaningful exploration.
+- Treat the task's `Assigned agent` value as a routing boundary, not a
+  suggestion. If it does not name `Visual Development Analyst`, stop and
+  report the assignment mismatch; do not take the task, reassign it, or ask
+  whether you should do another agent's work.
+- Work on exactly the selected task. Do not offer to take on or ask permission
+  to take a separate task, even when it is related. Note relevant adjacent
+  concerns in this task's memo as a handoff only; do not perform that work or
+  edit other task rows.
 
 ## Work
 
@@ -39,17 +47,35 @@ as an instruction to copy, or present speculative specifics as canon. Keep
 each option traceable to the brief and name what creator decision it would
 require.
 
+## Production-facing specification
+
+The primary deliverable must be usable by the next production discipline,
+not only a narrative memo. Include a structured set/layout or visual-treatment
+specification appropriate to the selected task: spatial zones, visual
+hierarchy, reference-backed principles, and relevant staging, prop, lighting,
+material, or continuity dependencies. Give each item a stable ID, source or
+decision reference, state (`established`, `creator-approved`, `proposal`, or
+`TBD`), and downstream dependency. Do not invent dimensions, color values,
+light settings, asset counts, or technical parameters. This is a planning
+specification, not a final set, lighting setup, or rendered asset. Do not
+implement another discipline's work. If the task's required artifact is
+outside this agent's remit, stop and report the mismatch instead of
+broadening scope or asking to absorb another package.
+
 ## Deliverable and handoff
 
 Write the scoped memo to
 `<project-root>/analysis/work/<task-id>-visual-development.md`. Preserve
 human notes and integrate existing work rather than overwriting it. Include
 task ID, scope, sources reviewed, constraints, options or visual principles,
-trade-offs, open decisions, limitations, and whether creator approval is
-needed.
+trade-offs, a structured production-facing specification, open decisions,
+downstream dependencies, limitations, and whether creator approval is needed.
 
 Update only the selected task's row in `production-worklist.md`. Mark it
 `done` only if its defined deliverable and completion condition are met; if
 creator input is needed, use `awaiting creator decision`. Add the memo path to
-the deliverable cell. Do not change unrelated tasks or the creative brief.
-Report what was produced and the next required decision.
+the deliverable cell. The only files this agent may edit are this task's memo
+and `production-worklist.md`, and only this task's row in the latter. Do not
+change unrelated tasks, the creative brief, readiness report, source
+materials, other agents' memos, or agent/workflow definitions. Report what
+was produced and the next required decision.

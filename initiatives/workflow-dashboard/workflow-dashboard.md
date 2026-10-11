@@ -20,7 +20,12 @@ to start, follow, resume, or hand off a film's pre-production workflow.
   remember its sequence.
 - Support starting a project from a selected project root and tracking its
   workflow stage, required artifacts, work packages, dependencies, assigned
-  specialist agent, status, and next action.
+  specialist agent, status, required output type, approval state, and next
+  action.
+- Make the distinction between analysis memos, structured
+  production-facing specifications, and implementation assets explicit and
+  traceable through handoffs. A task cannot be considered implementation-ready
+  merely because a memo exists.
 - Make session handoffs and long pauses recoverable: show what was last
   completed, what remains, what decisions are open, and how to resume.
 - Assess and, if a safe and supported design is established, implement
@@ -38,6 +43,10 @@ to start, follow, resume, or hand off a film's pre-production workflow.
 - Allowing unattended agents to make irreversible creative choices, rewrite
   the screenplay, create final assets, or represent unreviewed work as
   approved.
+- Treating planning specialists as implementation agents. Specifications
+  (such as shot lists, prop/material registers, lighting instructions, or
+  cloth behavior criteria) are distinct from implementation assets (such as
+  Blender scenes, rigs, simulations, mocap JSON, or recorded audio).
 - Assuming that a model, editor, machine, or network connection will remain
   available indefinitely.
 - Choosing a specific dashboard framework, database, hosting model,
@@ -51,15 +60,19 @@ The initiative is complete when a representative user can:
 
 1. Start a new film workflow from a project root using clear onboarding.
 2. See the current stage, required and completed artifacts, open decisions,
-   work packages, their single assigned agent, dependencies, and next
-   available action.
+   work packages, their single assigned agent, named deliverable type,
+   dependencies, approval state, and next available action.
 3. Pause and resume after a long interval or hand the project to another
    authorized person without losing workflow state or confusing proposals
    with creator-approved decisions.
-4. Use any implemented automation only with visible status, durable
+4. Trace a production-facing specification to its evidence and approval,
+   then identify a separate qualified execution task or explicitly show that
+   no execution agent is available. Do not present specification completion
+   as asset implementation.
+5. Use any implemented automation only with visible status, durable
    checkpoints, explicit pause/cancel/recovery behavior, and clear
    human-approval gates.
-5. Understand how to operate the workflow from built-in guidance without
+6. Understand how to operate the workflow from built-in guidance without
    relying on the original creator's memory.
 
 The gate requires documented evaluation of the intended editor/agent

@@ -4,8 +4,8 @@
 - **Contract:**
   - **In:** A project with a parsed or explicitly entered production worklist.
   - **Requires:** Stable task IDs, one assigned agent per task, dependency
-    links, statuses, deliverables, and the approval distinctions in the
-    workflow-state contract.
+    links, statuses, concrete deliverable contracts and types, and the
+    approval distinctions in the workflow-state contract.
   - **Delivers:** A task/work-package view that identifies ready, blocked,
     deferred, in-progress, and completed work, links handoff files, and gives
     a copyable invocation for the assigned agent.
@@ -18,7 +18,14 @@
     gates are satisfied.
   - Users can distinguish agent output awaiting creator approval from
     approved project direction.
-  - The task view presents its source files, contract, deliverable, and
-    resume context.
+  - The task view presents its source files, concrete output format,
+    completion test, approval state, implementation/execution dependency,
+    and resume context.
+  - When a task's deliverable is an implementation asset, the board requires
+    an approved upstream specification and identifies the qualified executor;
+    it flags a missing executor rather than suggesting a planning agent
+    create the asset.
+  - Cross-discipline implications are visible as links/dependencies, not
+    added responsibilities for the currently assigned specialist.
 - **Tests:** Fixture-based status/dependency tests and a collaborator
   handoff walkthrough.
