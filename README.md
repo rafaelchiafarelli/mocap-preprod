@@ -112,6 +112,25 @@ The current roster contains planning specialists only; it does not yet
 include agents that author final production files such as mocap JSON, Blender
 scenes, simulations, or rendered assets.
 
+### Decision gates and bounded work
+
+Specialists ask at most three task-scoped creator questions, including
+clarifying follow-ups, one at a time, and only when an answer changes work
+before the next named milestone or prevents material rework. Record task-local
+answers/deferrals in the task memo and its worklist row; route project-wide
+creative direction changes to the Decision Facilitator for the brief. The
+Decision Facilitator asks at most five must-decide questions per interview
+pass, including follow-ups. For everything else, record a
+deferred decision with a revisit trigger and practical consequence; continue
+unaffected work. A detail that can be tested in editing or addressed by a
+targeted reshoot is not automatically a pre-production blocker.
+
+Keep option sets small: normally one evidence-based recommendation and at
+most one materially different alternative. Do not enumerate combinations or
+turn every unknown into a new worklist row. Add a task only for a distinct
+deliverable with one qualified owner that blocks a named milestone. A
+creator may request a broader exploration or more interview questions.
+
 These are agent instructions, not operating-system file permissions. Because
 specialists need to write their memo and worklist status, their editor tool
 still has workspace-level access; use a tool hook or other external control

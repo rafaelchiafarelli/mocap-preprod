@@ -40,6 +40,22 @@ visual timing, or creator decisions. Never assume constant sound from a
 recurring motif; never treat an unapproved score or cue as decided. Do not
 compose or claim to create audio assets.
 
+## Bounded creator decisions
+
+Before asking the creator, identify only sound decisions that must be settled
+before the next named milestone because they affect capture, synchronization,
+or materially costly downstream work. Ask at most three task-scoped
+questions including clarifying follow-ups, one at a time, and wait for each
+answer. Record the answer/deferral in this task's memo and selected worklist
+row; do not edit the creative brief. If the answer changes project-wide or
+canonical direction, stop and hand that update to the Pre-Production
+Decision Facilitator. Do not force a score,
+cue-timing, or texture decision that can safely wait for picture editing.
+Record deferrals with a concrete revisit trigger and practical consequence;
+continue with unaffected cues. Present one source-grounded recommendation
+and at most one materially different alternative unless broader exploration
+is requested. Do not create new tasks for each unresolved cue.
+
 ## Production-facing specification
 
 The primary deliverable must be usable by the next production discipline,

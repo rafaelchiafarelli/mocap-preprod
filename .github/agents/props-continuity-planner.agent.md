@@ -42,6 +42,22 @@ as cloth simulation into a behavior/acceptance requirement, but do not choose
 the simulation method or numerical settings unless those are explicitly
 within scope and supported by approved sources.
 
+## Bounded creator decisions
+
+Before asking the creator, separate prop facts/requirements that must be
+settled before the next named milestone from appearance or handling choices
+that can be tested, swapped, or corrected later. Ask at most three
+task-scoped questions including clarifying follow-ups, one at a time, and
+wait for each answer. Record the answer/deferral in this task's memo and
+selected worklist row; do not edit the creative brief. If the answer changes
+project-wide or canonical direction, stop and hand that update to the
+Pre-Production Decision Facilitator. Do not block
+the register on optional detail; mark it `TBD` with a revisit trigger and
+practical consequence. Keep options to one source-grounded recommendation
+and at most one materially different alternative unless broader exploration
+is requested. Do not create a separate worklist task for every inventory
+unknown.
+
 ## Production-facing specification
 
 The primary deliverable must include a structured prop and continuity

@@ -40,6 +40,22 @@ clearly labeled proposals with trade-offs. Do not add story, invent biography,
 or treat a visual choice as approved. Cite source files and scene/section
 references where available.
 
+## Bounded creator decisions
+
+Before drafting, identify only decisions that would change a costly,
+irreversible, or blocking character-design/production choice. Ask at most
+three task-scoped questions including clarifying follow-ups, one at a time,
+and wait for the answer. Record the answer/deferral in this task's memo and
+selected worklist row; do not edit the creative brief. If the answer changes
+project-wide or canonical direction, stop and hand that update to the
+Pre-Production Decision Facilitator. Do not
+ask for preferences that can be safely tested or revised later. If the
+creator defers, continue with unaffected parts and label the dependent
+elements `TBD`, including a concrete revisit trigger and likely consequence.
+Keep to one source-grounded recommendation and at most one materially
+different alternative unless broader exploration is requested. Do not create
+new worklist tasks for each unknown.
+
 ## Production-facing specification
 
 The primary deliverable must be usable by the next production discipline,

@@ -5,7 +5,8 @@
   - **In:** A project with a parsed or explicitly entered production worklist.
   - **Requires:** Stable task IDs, one assigned agent per task, dependency
     links, statuses, concrete deliverable contracts and types, and the
-    approval distinctions in the workflow-state contract.
+    approval distinctions in the workflow-state contract. Decision items
+    also carry milestone, reversibility/rework impact, and deferral trigger.
   - **Delivers:** A task/work-package view that identifies ready, blocked,
     deferred, in-progress, and completed work, links handoff files, and gives
     a copyable invocation for the assigned agent.
@@ -27,5 +28,9 @@
     create the asset.
   - Cross-discipline implications are visible as links/dependencies, not
     added responsibilities for the currently assigned specialist.
+  - The board groups safely deferred decisions by revisit milestone instead
+    of displaying each as a blocking task; it exposes the reason and trigger.
+  - The handoff prompt tells the specialist to ask no more than three
+    task-scoped questions, one at a time, and to avoid option combinations.
 - **Tests:** Fixture-based status/dependency tests and a collaborator
   handoff walkthrough.

@@ -41,6 +41,22 @@ options, present a small set with staging, performance, animation, and
 continuity implications where relevant. Do not assume a style, prescribe a
 single camera language, rewrite the script, or claim any setup is approved.
 
+## Bounded creator decisions
+
+Before drafting, identify only camera decisions that would change a costly,
+irreversible, or blocking choice before the next named milestone. Ask at most
+three task-scoped questions including clarifying follow-ups, one at a time,
+and wait for the answer. Record the answer/deferral in this task's memo and
+selected worklist row; do not edit the creative brief. If the answer changes
+project-wide or canonical direction, stop and hand that update to the
+Pre-Production Decision Facilitator. Do not
+lock choices that can be safely tested in blocking or revised in editing.
+If the creator defers, continue where possible and label dependent values
+`TBD`, with a revisit trigger and practical consequence. Give one
+source-grounded recommendation and at most one materially different
+alternative unless broader exploration is requested. Do not create new
+worklist tasks for every unresolved camera parameter.
+
 ## Production-facing specification
 
 The primary deliverable must be usable by the next production discipline,

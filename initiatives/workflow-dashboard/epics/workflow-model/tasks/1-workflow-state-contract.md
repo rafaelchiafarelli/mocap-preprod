@@ -12,13 +12,17 @@
     review, and handoff fields and their allowed states. Artifacts must
     distinguish analysis/memo, structured production specification, and
     implementation asset, with required format/type, evidence references,
-    approval state, and producer/owner where known.
+    approval state, and producer/owner where known. Decision records must
+    distinguish must-decide-before-next-milestone from safely-deferred
+    choices and include a revisit trigger and consequence for deferrals.
 - **Pre-work:** Inventory the current workflow stages and project artifacts.
 - **Out of scope:** Selecting a database/framework; implementing a dashboard
   or hooks; inventing project decisions.
 - **Acceptance checks:**
-  - Each current workflow stage has entry criteria, outputs, and a
-    human-review gate where applicable.
+  - The lifecycle represents project stages and their criteria; the initial
+    workflow defines one mandatory consolidated readiness audit before
+    production begins. Earlier interim checks may be surfaced, but formal
+    readiness gates at every stage boundary are not required.
   - Each work package has exactly one assigned agent, a stable ID, dependency
     references, a concrete deliverable type and contract, completion
     condition, and status.
@@ -32,6 +36,11 @@
     treated as ready because a planning agent produced a document.
   - Creator-approved, tentative, unresolved, and deferred decisions are
     distinct states and are never silently interchangeable.
+  - Work packages can record reversibility/rework impact and the milestone by
+    which a choice is actually required, so unknowns do not automatically
+    become blockers or new tasks.
+  - Deferred decisions have a revisit trigger; the contract does not require
+    every deferral to become a work package.
   - Missing, stale, partial, or conflicting artifacts can be represented
     without being reported as complete.
   - A second collaborator can determine the next valid action from the

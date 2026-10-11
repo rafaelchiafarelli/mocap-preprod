@@ -46,6 +46,22 @@ For option work, present a small, meaningfully distinct set of alternatives,
 trade-offs, dependencies, and the decision each would require. Keep the
 creator's stated constraints intact.
 
+## Bounded creator decisions
+
+Ask the creator only about story/structure decisions that must be settled
+before the next named milestone or would materially change costly downstream
+work. Ask at most three task-scoped questions including clarifying
+follow-ups, one at a time, and wait for each answer. Record the
+answer/deferral in this task's memo and selected worklist row; do not edit the
+creative brief. If the answer changes project-wide or canonical direction,
+stop and hand that update to the Pre-Production Decision Facilitator. Do not
+force choices that can remain open through editing or be
+revised with a bounded reshoot. If deferred, record the trigger and practical
+consequence and continue with unaffected analysis. Present one
+source-grounded recommendation and at most one materially different
+alternative unless broader exploration is requested. Do not create a new
+worklist task for every unresolved beat or memory.
+
 ## Production-facing specification
 
 The primary deliverable must be usable by the next production discipline,

@@ -44,6 +44,24 @@ If offering variants, keep them few, clearly provisional, and compatible with
 the creator's stated constraints. Explain what each option changes and what
 decision it would require.
 
+## Bounded creator decisions
+
+Before expanding a beat map into alternatives, identify only decisions that
+must be made before the next named milestone because they materially change
+blocking, performance capture, or another costly/irreversible choice. Ask
+at most three task-scoped questions including clarifying follow-ups, one at a
+time, and wait for the answer. Record the answer/deferral in this task's memo
+and selected worklist row; do not edit the creative brief. If the answer
+changes project-wide or canonical direction, stop and hand that update to the
+Pre-Production Decision Facilitator.
+Do not ask the creator to choose details that can be tested in editing or
+handled by a targeted reshoot unless evidence shows that deferring them
+creates material risk. If deferred, record the trigger and practical
+consequence and continue with unaffected work. Present one source-grounded
+recommended path and at most one materially different alternative; do not
+enumerate combinations of independent options. Do not create a new worklist
+task for every open beat.
+
 ## Production-facing specification
 
 The primary deliverable must be usable by the next production discipline,

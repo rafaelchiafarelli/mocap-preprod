@@ -53,19 +53,48 @@ The creator—not this agent—owns creative decisions. Conduct the interview in
 chat, one question at a time, using the highest-impact unresolved items from
 the report:
 
+### Bounded decision gate
+
+- Before asking, classify each uncertainty as (a) must decide before the next
+  named milestone because it changes an irreversible or expensive choice, (b)
+  useful now but safely reversible, or (c) safely deferrable to editing,
+  blocking, or a targeted reshoot. Do not treat every unknown as a blocker.
+- Ask at most **five** must-decide questions in one interview pass, including
+  any clarifying follow-ups, one at a time. Stop sooner when remaining
+  questions do not block the next milestone.
+  Ask more only if the creator explicitly requests another pass.
+- Prioritize by consequence of being wrong, cost/reversibility, and whether
+  other work is blocked—not by how many gaps the assessment lists.
+- For each deferral, record a short decision-register entry with its revisit
+  trigger (for example, before shot lock or before final asset build) and
+  practical consequence. Do not turn every deferred question into a new
+  worklist row.
+- Create a follow-up work package only for a distinct deliverable with a
+  single qualified owner that is necessary to cross a named milestone.
+  Otherwise keep related open items together in the brief's deferred-decision
+  register. Do not multiply packages into combinatorial alternatives.
+- The creator may accept editorial changes or a targeted reshoot as a
+  recovery path. Treat that as a valid risk-management option, not as a
+  reason to force a decision early; still flag material cost or dependency
+  consequences where evidence supports them.
+
 If invoked with a specific worklist task ID whose intended outcome is to
 obtain a creator decision or explicit deferral, use the task-scoped decision
 mode: read that single task and the referenced brief material, ask only for
 that decision in chat, record the creator's response and state in the brief,
-and update only that task's status and evidence/deliverable reference. Do not
-restart the full interview or make the decision yourself.
+and update only that task's status and evidence/deliverable reference. If
+multiple tightly coupled decisions are explicitly in scope, ask no more than
+three in that task-scoped pass, including clarifying follow-ups, one at a
+time. Do not restart the full interview or make the decision yourself.
 
 1. Briefly explain that the readiness assessment is evidence and proposals,
    not approved direction. Summarize the most consequential findings and ask
    the creator to correct or challenge them.
-2. Ask only questions that affect near-term choices or unblock work. Explain
-   briefly why each question matters. Group minor or deferrable questions for
-   later instead of interrogating the creator about every gap.
+2. Ask only questions that affect the next named milestone or prevent
+   material rework. Explain briefly why each must be answered now. Put
+   safely reversible or deferrable questions in the deferred-decision
+   register with an explicit revisit trigger instead of interrogating the
+   creator about every gap.
 3. Ask exactly one substantive question, then wait for the creator's answer
    before asking the next. Do not bundle unrelated decisions.
 4. Accept “I don't know,” “leave this open,” and explicit deferrals. Do not
@@ -83,8 +112,10 @@ restart the full interview or make the decision yourself.
 7. The creator may stop or pause at any point. Save the current state and
    list remaining high-priority questions so a later session can resume.
 8. When high-impact questions are answered, tentatively decided, or explicitly
-   deferred, summarize the decisions and ask whether the creator wants to
-   finish this interview pass. Do not continue into world/character design.
+   deferred (or the five-question limit is reached), summarize the current
+   decisions, what was intentionally deferred, and the next milestone. Ask
+   whether the creator wants to finish this interview pass. Do not continue
+   into world/character design or open a new question batch unless requested.
 
 ## Finalize the stage outputs
 
@@ -101,7 +132,8 @@ The brief must show:
 - a concise creator-approved direction summary;
 - a decision register with state, evidence/reference, and date if available;
 - open questions and explicit deferrals, including why they are deferred if
-  the creator provided a reason;
+  the creator provided a reason, plus a concrete revisit trigger and
+  consequence where known;
 - disagreements or assessment findings the creator rejected or corrected;
 - a note that this is the current working direction, not immutable canon or
   final production approval.
@@ -136,6 +168,14 @@ Rules for worklist quality:
 
 - Make tasks small and concrete enough that one later session or discipline
   can own them; avoid vague entries such as “develop the world.”
+- Do not create a task for each unknown. Keep non-blocking unknowns in a
+  bounded deferred-decision register in the brief, grouped by revisit
+  milestone. Add a worklist row only when the uncertainty requires a distinct
+  deliverable/owner before a named milestone or blocks dependent work.
+- In each task, distinguish decisions required before the next milestone
+  from choices that can safely remain open through editing, blocking, or
+  targeted reshoot. State the practical cost/trigger, not speculative
+  worst-case consequences.
 - Name a discipline-native, production-facing specification as the task
   deliverable (for example, a beat map, shot/coverage table, prop register,
   set/layout spec, character requirements matrix, or sound cue sheet), not
@@ -175,6 +215,9 @@ Rules for worklist quality:
   completion condition are met, even if its proposal still awaits creator
   approval; record that approval state distinctly and do not imply that
   implementation may begin.
+- Limit option sets to one recommended, source-grounded path and at most one
+  materially different alternative unless the creator asks for broader
+  exploration. Avoid enumerating combinations of independent options.
 
 At the end, identify the first one to three work packages that are truly
 ready to begin, explain why their dependencies are satisfied, and provide a

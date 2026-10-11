@@ -9,7 +9,8 @@
     implementation, handoff, pause, resume, and collaborator onboarding.
   - **Delivers:** `spec/user-journeys-and-automation-policy.md` describing
     user journeys, role/approval boundaries, reminders, long-running
-    operations, interruption/recovery, and observable safety requirements.
+    operations, interruption/recovery, bounded creator-decision prompts,
+    deferral/revisit behavior, and observable safety requirements.
 - **Pre-work:** Task 1 accepted by the initiative owner.
 - **Out of scope:** Selecting a notification provider; implementing hooks,
   daemons, job queues, or UI; allowing agents to make creative decisions
@@ -27,6 +28,16 @@
   - A specialist may only produce deliverables within its assigned task and
     remit. Cross-discipline dependencies become explicit handoffs or separate
     tasks; they do not authorize a specialist to expand scope.
+  - A specialist decision gate is limited to three task-scoped questions,
+    one at a time; a full creator interview is limited to five must-decide
+    questions per pass unless the creator asks to continue.
+  - Questions are prioritized by next-milestone impact and reversibility.
+    Decisions that can be handled in editing or by a targeted reshoot are
+    deferred by default unless evidence shows material risk.
+  - Deferred items record a revisit trigger and consequence. Non-blocking
+    deferrals are grouped in a register and do not each create a work package.
+  - Option sets avoid combinatorial alternatives: normally one grounded
+    recommendation and no more than one materially distinct alternative.
   - Automation cannot convert a memo or proposal into an approved
     specification or implementation asset, or mark an asset implemented
     without verifiable evidence.

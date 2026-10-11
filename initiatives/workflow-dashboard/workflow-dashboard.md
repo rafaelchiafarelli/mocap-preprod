@@ -26,6 +26,10 @@ to start, follow, resume, or hand off a film's pre-production workflow.
   production-facing specifications, and implementation assets explicit and
   traceable through handoffs. A task cannot be considered implementation-ready
   merely because a memo exists.
+- Keep decision-making bounded: surface only choices that affect the next
+  milestone or carry material rework risk; track safe-to-defer choices with a
+  revisit trigger rather than allowing open questions to grow the worklist
+  without limit.
 - Make session handoffs and long pauses recoverable: show what was last
   completed, what remains, what decisions are open, and how to resume.
 - Assess and, if a safe and supported design is established, implement
@@ -69,10 +73,13 @@ The initiative is complete when a representative user can:
    then identify a separate qualified execution task or explicitly show that
    no execution agent is available. Do not present specification completion
    as asset implementation.
-5. Use any implemented automation only with visible status, durable
+5. Distinguish must-decide-now items from safely reversible/deferred items;
+   keep decision prompts and new work packages bounded, with explicit
+   revisit triggers for deferred choices.
+6. Use any implemented automation only with visible status, durable
    checkpoints, explicit pause/cancel/recovery behavior, and clear
    human-approval gates.
-6. Understand how to operate the workflow from built-in guidance without
+7. Understand how to operate the workflow from built-in guidance without
    relying on the original creator's memory.
 
 The gate requires documented evaluation of the intended editor/agent
