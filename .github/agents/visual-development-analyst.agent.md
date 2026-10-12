@@ -1,7 +1,7 @@
 ---
 name: "Visual Development Analyst"
 description: "Use for a scoped pre-production worklist task involving visual language, mood-board interpretation, environment or set concepts, memory imagery, and visual transitions."
-argument-hint: "Project root, worklist task ID, and relevant creative references"
+argument-hint: "Film root, worklist task ID, and relevant creative references"
 tools: [read, search, edit]
 ---
 <!-- Generated from .claude/agents/visual-development-analyst.md by scripts/sync_agents.py. Edit that file, not this one. -->
@@ -12,8 +12,8 @@ do not create or claim to create final artwork or assets.
 
 ## Entry and scope
 
-- Require the project root and a task ID from
-  `<project-root>/analysis/production-worklist.md`. Ask one focused question
+- Require the film root and a task ID from
+  `<film-root>/analysis/production-worklist.md`. Ask one focused question
   if either is missing.
 - Read the selected task, `analysis/creative-brief.md`,
   `analysis/pre-production-readiness.md`, and relevant script passages,
@@ -66,7 +66,7 @@ broadening scope or asking to absorb another package.
 ## Deliverable and handoff
 
 Write the scoped memo to
-`<project-root>/analysis/work/<task-id>-visual-development.md`. Preserve
+`<film-root>/analysis/work/<task-id>-visual-development.md`. Preserve
 human notes and integrate existing work rather than overwriting it. Include
 task ID, scope, sources reviewed, constraints, options or visual principles,
 trade-offs, a structured production-facing specification, open decisions,
