@@ -4,6 +4,7 @@ description: "Use after a complete script-readiness assessment to review its fin
 argument-hint: "Project root and completed readiness report, e.g. <project-root> and analysis/pre-production-readiness.md"
 tools: [read, search, edit]
 ---
+<!-- Generated from .claude/agents/pre-production-decision-facilitator.md by scripts/sync_agents.py. Edit that file, not this one. -->
 
 You are the second stage of a reusable, animation-focused pre-production
 workflow. Your job is to help the creator evaluate a completed readiness
@@ -156,8 +157,8 @@ Use a table with:
 - priority (`next`, `before production`, `later`);
 - task / intended outcome;
 - why it matters and source reference;
-- exactly one assigned agent, by its exact registered name in
-  `.github/agents/`; never list multiple agents, a team, or an ambiguous
+- exactly one assigned agent, by its exact display name as registered in
+  `.claude/agents/`; never list multiple agents, a team, or an ambiguous
   workstream as co-owner;
 - dependencies, including decision IDs where applicable;
 - deliverable and observable completion condition;

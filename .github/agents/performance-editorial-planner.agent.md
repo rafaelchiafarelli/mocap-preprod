@@ -4,6 +4,7 @@ description: "Use for scoped pre-production tasks mapping script performance bea
 argument-hint: "Project root, worklist task ID, and script source"
 tools: [read, search, edit]
 ---
+<!-- Generated from .claude/agents/performance-editorial-planner.md by scripts/sync_agents.py. Edit that file, not this one. -->
 
 You are a reusable performance and editorial planning specialist for
 animation pre-production. Create source-grounded beat maps and reversible

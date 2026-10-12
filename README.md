@@ -7,7 +7,7 @@ project-specific work in that film's own project root.
 
 ## First agent
 
-`.github/agents/script-readiness-analyst.agent.md` analyzes a script and
+`.claude/agents/script-readiness-analyst.md` analyzes a script and
 related creative materials, then turns gaps, ambiguities, and dependencies
 into a prioritized set of work to complete or explicitly defer before
 production. It distinguishes explicit information, ambiguity, and material
@@ -29,7 +29,7 @@ whole-project next-stage handoff; that is prepared after consolidation.
 
 ## Second agent
 
-`.github/agents/pre-production-decision-facilitator.agent.md` is the next
+`.claude/agents/pre-production-decision-facilitator.md` is the next
 stage after a complete readiness assessment. It checks the assessment with
 the creator, asks the highest-impact questions one at a time, records
 approved decisions and explicit deferrals, and creates two handoff artifacts:
@@ -67,21 +67,21 @@ Suggested invocation:
 ## Specialist agents
 
 The worklist's discipline-specific tasks can be handled by these reusable
-agents in `.github/agents/`:
+agents in `.claude/agents/`:
 
-- `story-editorial-analyst.agent.md` — script alignment, narrative structure,
+- `story-editorial-analyst.md` — script alignment, narrative structure,
   and memory/editorial options.
-- `visual-development-analyst.agent.md` — environment, visual language,
+- `visual-development-analyst.md` — environment, visual language,
   mood-board interpretation, and visual-memory options.
-- `character-design-planner.agent.md` — scoped character appearance and
+- `character-design-planner.md` — scoped character appearance and
   wardrobe exploration.
-- `performance-editorial-planner.agent.md` — performance beats and
+- `performance-editorial-planner.md` — performance beats and
   performance/image timing.
-- `props-continuity-planner.agent.md` — evidence-based prop inventories and
+- `props-continuity-planner.md` — evidence-based prop inventories and
   continuity.
-- `sound-design-planner.agent.md` — provisional dialogue, ambience, effects,
+- `sound-design-planner.md` — provisional dialogue, ambience, effects,
   silence, and music cue planning.
-- `cinematography-planner.agent.md` — camera intent, framing, movement, and
+- `cinematography-planner.md` — camera intent, framing, movement, and
   coverage exploration when a deferred task is reopened.
 
 Each work package names exactly one assigned agent in its `Assigned agent`
@@ -136,32 +136,32 @@ specialists need to write their memo and worklist status, their editor tool
 still has workspace-level access; use a tool hook or other external control
 if hard file-level enforcement is required.
 
-The current TicTac brief is marked **Awaiting creator review**. Tasks explicitly
-marked `ready for exploration` may be explored as reversible, provisional
-options; agents must not treat their results as approved design. The character
-exploration task is blocked, so the Character Design Planner must wait until
-that task is unblocked. The Cinematography Planner likewise waits until its
-deferred task is reopened.
+## Running the agents
 
-### Using these agents in Remote VS Code
+The agent definitions in `.claude/agents/` are canonical. The files in
+`.github/agents/` are VS Code Copilot adapters generated from them, so don't
+edit an adapter. Edit the Claude file and run:
 
-These are VS Code Copilot workspace custom agents, stored under
-`.github/agents/`. In Remote VS Code, open this `mocap-preprod` folder as the
-workspace in the remote window, then start a new Copilot Chat and select the
-agent from the agent picker. If the folder is opened only locally while the
-film project is remote (or vice versa), the agent files may not be discovered
-in that workspace. Point each agent at the actual project root and relevant
-worklist task. These `.agent.md` files are not native Claude Code agents.
+```sh
+python3 scripts/sync_agents.py          # regenerate .github/agents/
+python3 scripts/sync_agents.py --check  # fails if an adapter is stale
+```
 
-## Agent configuration by platform
+**Claude Code.** Most of these agents interview the creator one question at a
+time, so run each one as the main session rather than as a subagent. Start
+from this repository so the agent is found, and give it the film's project
+root:
 
-The current `.github/agents/` file is for VS Code Copilot; Claude Code does
-not load it as a native Claude agent. If both platforms should run this
-workhorse, keep a native agent adapter under `.claude/agents/` as well.
-Platform adapters may need different frontmatter and tool names, but should
-follow the same reusable workflow and documentation so the process does not
-drift. Moving the Copilot agent into `.claude/` would make it unavailable as
-a VS Code Copilot custom agent.
+```sh
+cd mocap-preprod
+claude --agent pre-production-decision-facilitator --add-dir <project-root>
+```
+
+Then name the project root, plus the readiness report or worklist task ID, in
+the first message.
+
+**VS Code Copilot.** Open this folder as the workspace (the remote one in
+Remote VS Code), start a Copilot Chat and pick the agent from the agent picker.
 
 ## Shared production-house documentation
 

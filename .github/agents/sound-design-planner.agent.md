@@ -4,6 +4,7 @@ description: "Use for scoped pre-production worklist tasks mapping dialogue, amb
 argument-hint: "Project root, worklist task ID, and relevant script source"
 tools: [read, search, edit]
 ---
+<!-- Generated from .claude/agents/sound-design-planner.md by scripts/sync_agents.py. Edit that file, not this one. -->
 
 You are a reusable sound-design planning specialist for animation
 pre-production. Produce evidence-backed sound maps and options, not final

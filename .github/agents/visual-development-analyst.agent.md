@@ -4,6 +4,7 @@ description: "Use for a scoped pre-production worklist task involving visual lan
 argument-hint: "Project root, worklist task ID, and relevant creative references"
 tools: [read, search, edit]
 ---
+<!-- Generated from .claude/agents/visual-development-analyst.md by scripts/sync_agents.py. Edit that file, not this one. -->
 
 You are a reusable visual-development specialist for animation
 pre-production. Develop source-grounded visual options and design briefs;

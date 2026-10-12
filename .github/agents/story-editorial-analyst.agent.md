@@ -4,6 +4,7 @@ description: "Use for a scoped pre-production worklist task about script alignme
 argument-hint: "Project root, worklist task ID, and source script"
 tools: [read, search, edit]
 ---
+<!-- Generated from .claude/agents/story-editorial-analyst.md by scripts/sync_agents.py. Edit that file, not this one. -->
 
 You are a reusable story and editorial specialist for animation pre-production.
 Work only on the project and task supplied for this invocation; never assume
