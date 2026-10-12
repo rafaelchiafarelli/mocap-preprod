@@ -1,9 +1,11 @@
-# Mocap Pre-Production Workhorse
+# mocap-preprod — pre-production agents
 
-This folder is the reusable pre-production workhorse for an animation-focused
-production house. Keep shared worker guidance and production-house
+Part of the **project** (the Mocap Studio code and agents). These agents run
+the pre-production stage of the **workhorse**, the workflow that takes a film
+from script to delivery, on one **film** at a time (the first is the guinea-pig
+film). Keep shared agent guidance and production-house
 documentation here; keep each film's script, creative decisions, and
-project-specific work in that film's own project root.
+film-specific work in that film's own folder (its film root).
 
 ## First agent
 
@@ -13,19 +15,19 @@ into a prioritized set of work to complete or explicitly defer before
 production. It distinguishes explicit information, ambiguity, and material
 not found; it does not rewrite the script or make creative decisions.
 
-This workflow is project-agnostic: provide the film project's root and script
-when invoking the agent. It writes that project's deliverable to
-`<project-root>/analysis/pre-production-readiness.md`. Do not add film-specific
-paths, assumptions, or findings to this reusable workhorse documentation.
+This workflow is film-agnostic: provide the film root and script
+when invoking the agent. It writes that film's deliverable to
+`<film-root>/analysis/pre-production-readiness.md`. Do not add film-specific
+paths, assumptions, or findings to this repository.
 
-For a feature or other large, naturally divided project, the agent first
-creates `<project-root>/analysis/session-plan.md`, tells you which sections
+For a feature or other large, naturally divided film, the agent first
+creates `<film-root>/analysis/session-plan.md`, tells you which sections
 should be handled in separate sessions, and stops before claiming a complete
 assessment. The plan includes suggested prompts and tracks section coverage.
 Run each section in its own session; a final consolidation session combines
-the section findings into the whole-project readiness report. The agent
+the section findings into the whole-film readiness report. The agent
 cannot launch those sessions for you. Triage and section work do not create a
-whole-project next-stage handoff; that is prepared after consolidation.
+whole-film next-stage handoff; that is prepared after consolidation.
 
 ## Second agent
 
@@ -34,9 +36,9 @@ stage after a complete readiness assessment. It checks the assessment with
 the creator, asks the highest-impact questions one at a time, records
 approved decisions and explicit deferrals, and creates two handoff artifacts:
 
-- `<project-root>/analysis/creative-brief.md` — the current direction, with
+- `<film-root>/analysis/creative-brief.md` — the current direction, with
   creator-approved decisions distinguished from unresolved items.
-- `<project-root>/analysis/production-worklist.md` — evidence-backed tasks
+- `<film-root>/analysis/production-worklist.md` — evidence-backed tasks
   grouped by workstream, with dependencies, deliverables, completion
   conditions, and status.
 
@@ -48,16 +50,16 @@ they do not silently turn recommendations into approved creative decisions.
 The decision facilitator checks the analysis and structures the handoff, but
 does not design the film itself.
 
-Run this second agent with the project root and the completed
-`analysis/pre-production-readiness.md`. For large projects, finish section
-analysis and whole-project consolidation first, unless intentionally
+Run this second agent with the film root and the completed
+`analysis/pre-production-readiness.md`. For large films, finish section
+analysis and whole-film consolidation first, unless intentionally
 requesting a clearly scoped section-level interview.
 
 Suggested invocation:
 
-> Use the Pre-Production Decision Facilitator for project root
-> `<project-root>` and readiness report
-> `<project-root>/analysis/pre-production-readiness.md`. Review the assessment
+> Use the Pre-Production Decision Facilitator for film root
+> `<film-root>` and readiness report
+> `<film-root>/analysis/pre-production-readiness.md`. Review the assessment
 > with me, ask the highest-impact questions one at a time, and do not begin
 > design work. Save my answers and explicit deferrals in the creative brief.
 > When I say to finish this pass, create/update the production worklist with
@@ -86,7 +88,7 @@ agents in `.claude/agents/`:
 
 Each work package names exactly one assigned agent in its `Assigned agent`
 column—never a team, multiple agents, or merely a suggested workstream. Each
-specialist is invoked for a specific project root and worklist task ID.
+specialist is invoked for a specific film root and worklist task ID.
 That assignment is a strict routing boundary: a specialist must stop and
 report a mismatch rather than take another agent's task, reassign itself, or
 ask the creator whether it should expand into another discipline. It may note
@@ -95,7 +97,7 @@ task. Specialists may edit only their own task memo and that task's worklist
 row; the brief, readiness report, source materials, and other tasks remain
 outside their editing scope.
 Each specialist reads the creative brief, readiness findings, and relevant
-sources; writes a scoped memo under `<project-root>/analysis/work/`; and
+sources; writes a scoped memo under `<film-root>/analysis/work/`; and
 updates only its selected task's status and deliverable link. They develop
 options and production-facing specifications, not only narrative commentary.
 Depending on the task, that artifact should be a usable beat map, shot list,
@@ -117,7 +119,7 @@ scenes, simulations, or rendered assets.
 Specialists ask at most three task-scoped creator questions, including
 clarifying follow-ups, one at a time, and only when an answer changes work
 before the next named milestone or prevents material rework. Record task-local
-answers/deferrals in the task memo and its worklist row; route project-wide
+answers/deferrals in the task memo and its worklist row; route film-wide
 creative direction changes to the Decision Facilitator for the brief. The
 Decision Facilitator asks at most five must-decide questions per interview
 pass, including follow-ups. For everything else, record a
@@ -149,15 +151,15 @@ python3 scripts/sync_agents.py --check  # fails if an adapter is stale
 
 **Claude Code.** Most of these agents interview the creator one question at a
 time, so run each one as the main session rather than as a subagent. Start
-from this repository so the agent is found, and give it the film's project
+from this repository so the agent is found, and give it the film's film
 root:
 
 ```sh
 cd mocap-preprod
-claude --agent pre-production-decision-facilitator --add-dir <project-root>
+claude --agent pre-production-decision-facilitator --add-dir <film-root>
 ```
 
-Then name the project root, plus the readiness report or worklist task ID, in
+Then name the film root, plus the readiness report or worklist task ID, in
 the first message.
 
 **VS Code Copilot.** Open this folder as the workspace (the remote one in
@@ -171,8 +173,7 @@ documentation can establish shared terms and handoffs across story, assets,
 scenes, animation, and sound. Keep early guidance explicit about what is
 established versus still to be learned from the pilot production.
 
-The eventual location of this workhorse within or alongside Mocap Studio is
-not fixed; its contents should remain usable either way.
+This repository is a submodule of `mocap-studio`.
 
 ## Workflow dashboard
 
