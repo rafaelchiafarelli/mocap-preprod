@@ -174,11 +174,7 @@ established versus still to be learned from the pilot production.
 The eventual location of this workhorse within or alongside Mocap Studio is
 not fixed; its contents should remain usable either way.
 
-## Workhorse improvement initiative
+## Workflow dashboard
 
-The reusable dashboard, onboarding, progress tracking, long-term resume, and
-safe automation/reminder proposal is planned under
-[`initiatives/workflow-dashboard/`](initiatives/workflow-dashboard/workflow-dashboard.md).
-It starts with workflow-state and safety/architecture contracts before any
-dashboard or long-running automation is implemented.
-# mocap-preprod
+The dashboard that tracks a film's workflow, work packages and agent runs is
+planned and built in `mocap-dashboard` (`initiatives/workflow-dashboard/`).
