@@ -1,24 +1,36 @@
 # workflow-dashboard — mocap-preprod
 
 **Goal:** Create a reusable dashboard and workflow-support tool that helps a
-creator or production team start a film project, understand the pre-production
-stages, see what has been completed and what is next, and resume work after
-long gaps or across separate sessions.
+creator take a film from source material through pre-production, production,
+post-production, and delivery. Make current work, evidence, dependencies,
+decisions, approvals, agent activity, and next actions visible, and explain
+why the project is in its current state and what a changed requirement may
+affect.
 
 **Problem:** The current workflow is described across custom agents and
-project-specific Markdown files. A new or returning user must remember which
-agent to run, which files to provide, what stage is complete, which work
-packages are ready, and which choices still require creator approval. This
-is easy to forget and difficult for other people to adopt consistently.
+project-specific files. A creator must remember which agent to run, which
+files to provide, what stage is complete, which work packages can run in
+parallel, what evidence supports each status, what decisions need approval,
+and how a changed requirement affects downstream work.
 
-**Users:** The creator and other authorized production collaborators who need
-to start, follow, resume, or hand off a film's pre-production workflow.
+**Users:** The creator in the initial local MVP; authorized collaborators
+may be added after the single-user workflow and access boundaries are proven.
 
-## Scope
+## MVP scope
+
+- Creator-only, local-first pilot using a real film project as the acceptance
+  case. Design records so a future collaborator can understand them, but do
+  not require accounts, hosted collaboration, or remote storage in the MVP.
+- Represent the full film lifecycle through final delivery. Stage templates
+  and qualified roles may be marked unconfigured until production planning
+  defines them; never represent an undefined stage as complete.
+- Support creator-dispatched Claude Code sessions using copyable task
+  handoffs and documented read-only session-status monitoring. Do not require
+  Anthropic API-key billing or unattended dispatch.
 
 - Make the workflow discoverable and usable without relying on the creator to
   remember its sequence.
-- Support starting a project from a selected project root and tracking its
+- Support starting/opening a project from a selected project root and tracking its
   workflow stage, required artifacts, work packages, dependencies, assigned
   specialist agent, status, required output type, approval state, and next
   action.
@@ -32,11 +44,13 @@ to start, follow, resume, or hand off a film's pre-production workflow.
   without limit.
 - Make session handoffs and long pauses recoverable: show what was last
   completed, what remains, what decisions are open, and how to resume.
+- Show dependencies and likely downstream impact when a source, decision, or
+  specification changes; identify unknown impact rather than claiming none.
 - Assess and, if a safe and supported design is established, implement
   automation hooks or reminders that can keep a process alive or bring it
   back to attention over a long period.
-- Support multiple human users and make responsibility, review, and approval
-  visible.
+- Keep future human ownership, review, and approval visible in the data model;
+  multi-user access control and shared editing are post-MVP.
 - Keep project-specific materials in each film project's root and the
   reusable dashboard/workflow definitions in this workhorse.
 
@@ -62,13 +76,13 @@ to start, follow, resume, or hand off a film's pre-production workflow.
 
 The initiative is complete when a representative user can:
 
-1. Start a new film workflow from a project root using clear onboarding.
+1. Start or open a film workflow from a project root using clear onboarding.
 2. See the current stage, required and completed artifacts, open decisions,
    work packages, their single assigned agent, named deliverable type,
    dependencies, approval state, and next available action.
-3. Pause and resume after a long interval or hand the project to another
-   authorized person without losing workflow state or confusing proposals
-   with creator-approved decisions.
+3. Pause and resume after a long interval without losing workflow state or
+   confusing proposals with creator-approved decisions. Future collaborator
+   handoff must remain feasible but is not required for the MVP.
 4. Trace a production-facing specification to its evidence and approval,
    then identify a separate qualified execution task or explicitly show that
    no execution agent is available. Do not present specification completion
@@ -76,27 +90,32 @@ The initiative is complete when a representative user can:
 5. Distinguish must-decide-now items from safely reversible/deferred items;
    keep decision prompts and new work packages bounded, with explicit
    revisit triggers for deferred choices.
-6. Use any implemented automation only with visible status, durable
+6. Observe creator-dispatched parallel agent sessions where the documented
+   CLI status interface is available; retain manual handoff/status fallback.
+   Any future unattended automation requires visible status, durable
    checkpoints, explicit pause/cancel/recovery behavior, and clear
    human-approval gates.
 7. Understand how to operate the workflow from built-in guidance without
    relying on the original creator's memory.
 
-The gate requires documented evaluation of the intended editor/agent
-environments, access boundaries, persistence, backup/recovery, and
-notification behavior. If safe unattended execution is not feasible, the
-dashboard must still provide a useful manual resume/reminder flow and state
-the limitation plainly.
+The MVP gate requires documented evaluation of the intended editor/agent
+environment, access boundaries, project-local persistence, and recovery. It
+also requires a consolidated pre-production readiness audit before the
+creator authorizes production entry. Interim checks may be shown without
+adding mandatory stage gates. Production/post-production definitions and
+required software must be surfaced as gaps until established. Notification
+providers, unattended scheduled runs, and shared backup/access are later
+decisions.
 
 ## Epic execution order
 
-1. **workflow-model** — define the lifecycle, project/work-package state, user
-   journeys, and architecture decisions before implementation.
-2. **dashboard** — implement project start, status visibility, and
-   collaboration/onboarding using the approved model.
-3. **automation** — implement safe persistence, reminders, pause/resume, and
-   supported hook integrations after the architecture and dashboard contracts
-   are stable.
+1. **workflow-model** — review the lifecycle/state contract, creator journey,
+   source-of-truth model, Claude Code integration boundary, and architecture.
+2. **dashboard** — implement project discovery, lifecycle/progress views,
+   dependency/change-impact view, and work-package handoffs/session tracking.
+3. **automation** — implement durable checkpoints and supported pause/resume
+   behavior. Reminders, hooks, and unattended operations remain later scope
+   until feasibility and authorization are established.
 
 See `epics/README.md` for dependency and acceptance order. Each task file
 defines one deliverable contract. Do not start implementation until its

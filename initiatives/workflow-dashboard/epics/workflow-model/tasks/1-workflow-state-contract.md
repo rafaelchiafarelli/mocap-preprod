@@ -43,7 +43,8 @@
     every deferral to become a work package.
   - Missing, stale, partial, or conflicting artifacts can be represented
     without being reported as complete.
-  - A second collaborator can determine the next valid action from the
-    contract without relying on tacit creator knowledge.
-- **Tests:** Contract review against the current readiness, session-plan,
-  creative-brief, and production-worklist formats; review by a second user.
+  - A future collaborator can determine the next valid action from the
+    project records without relying on tacit creator knowledge.
+- **Tests:** Creator review against the current readiness, session-plan,
+  creative-brief, and production-worklist formats; fixture review for
+  missing, stale, partial, and conflicting inputs.
