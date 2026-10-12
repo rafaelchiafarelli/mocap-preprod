@@ -63,11 +63,11 @@ Its state is `not-started`, `in-progress`, `blocked`, `awaiting-review`,
 `passed`, `deferred`, or `cancelled`; `passed` requires recorded exit
 evidence and human confirmation where the stage defines a review gate.
 
-The lifecycle must be capable of representing the path from script through
-pre-production, production, post-production, and delivery. The initial
-workflow definitions may cover only some of these stages. An uncovered stage
-or missing qualified execution role is an explicit capability gap, not an
-implicitly completed stage.
+The lifecycle must represent the full path from script through
+pre-production, production, post-production, and delivery. Detailed stage
+templates may be added incrementally. An uncovered stage or missing qualified
+execution role is an explicit capability gap, not an implicitly completed
+stage.
 
 Stage readiness is derived from its criteria and evidence; it is not inferred
 from the percentage of tasks marked done. For the initial film workflow, the
@@ -112,13 +112,16 @@ package.
 An agent run is an execution attempt for a work package, not the work package
 itself. Keep its status separate:
 
-- `queued`, `running`, `paused`, `succeeded`, `failed`, or `cancelled`.
+- `queued`, `running`, `needs-input`, `idle`, `completed`, `failed`,
+  `stopped`, `paused`, or `cancelled`.
 
 Record the work-package ID, assigned agent, start/end time when available,
-last checkpoint, produced or changed paths, and surfaced errors. A successful
-run does not by itself complete a work package, approve an artifact, or pass a
-stage gate. Multiple runs may occur for one package; prior outcomes remain
-traceable.
+CLI session ID when available, last observed time, last checkpoint, produced
+or changed paths, and surfaced errors. `needs-input` includes creator
+questions and permission prompts; show the reason when the CLI provides it.
+An `idle` or `completed` session does not by itself complete a work package,
+approve an artifact, or pass a stage gate. Multiple runs may occur for one
+package; prior outcomes remain traceable.
 
 ### Artifact
 

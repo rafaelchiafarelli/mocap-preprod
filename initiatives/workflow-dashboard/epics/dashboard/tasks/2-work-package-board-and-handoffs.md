@@ -9,7 +9,8 @@
     also carry milestone, reversibility/rework impact, and deferral trigger.
   - **Delivers:** A task/work-package view that identifies ready, blocked,
     deferred, in-progress, and completed work, links handoff files, and gives
-    a copyable invocation for the assigned agent.
+    a copyable handoff for the assigned agent. When available, it also shows
+    the linked, read-only Claude Code session status.
 - **Pre-work:** State contract and onboarding/status view accepted.
 - **Out of scope:** Running the agent without user initiation; treating
   narrative claims as verified status without artifact evidence.
@@ -32,5 +33,11 @@
     of displaying each as a blocking task; it exposes the reason and trigger.
   - The handoff prompt tells the specialist to ask no more than three
     task-scoped questions, one at a time, and to avoid option combinations.
+  - The creator dispatches sessions in Claude Code; the dashboard cannot
+    silently launch runs, bypass permissions, or claim task completion from
+    session completion.
+  - Parallel work is offered only when dependencies and declared write paths
+    permit it. Overlapping or unknown write scopes require serial work or
+    explicit human review.
 - **Tests:** Fixture-based status/dependency tests and a collaborator
   handoff walkthrough.

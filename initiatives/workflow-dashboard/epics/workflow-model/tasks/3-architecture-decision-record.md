@@ -4,9 +4,10 @@
 - **Contract:**
   - **In:** Accepted workflow state and user-journey/automation contracts.
   - **Requires:** Evaluation of the actual target environments, including
-    Remote VS Code, custom-agent discovery, Claude Code compatibility if
-    required, project-root access, multi-user handoff, persistence, security,
-    and operating/maintenance cost.
+    Remote VS Code/WSL2, Claude Code subscription authentication and
+    documented agent-session monitoring, project-root access, future
+    collaborator handoff, persistence, security, and operating/maintenance
+    cost.
   - **Delivers:** `spec/architecture-decision-record.md` comparing viable
     dashboard, persistence, integration, and automation approaches; chosen
     approach (or explicit unresolved decisions); deployment and migration
@@ -19,7 +20,9 @@
   service, database, hook API, or always-on machine without explicit
   evaluation.
 - **Acceptance checks:**
-  - At least one viable minimum approach and its limitations are documented.
+  - At least one viable minimum approach and its limitations are documented,
+    including the decision not to require Anthropic API-key billing in the
+    initial creator-only MVP.
   - Platform-specific capabilities and gaps are separated from
     platform-neutral workflow data.
   - The design defines ownership, persistence, backup/export, access control,

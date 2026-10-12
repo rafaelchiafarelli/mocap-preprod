@@ -5,11 +5,11 @@ and which technical approach can support those needs before implementation.
 
 **Depends on:** —
 
-**Epic gate:** A creator and a second collaborator can review the proposed
-workflow state, project lifecycle, user journeys, platform constraints, and
-architecture trade-offs. The state model distinguishes source evidence,
-proposals, creator-approved decisions, explicit deferrals, work status, and
-human approvals.
+**Epic gate:** The creator can review the proposed workflow state, project
+lifecycle, user journeys, platform constraints, and architecture trade-offs.
+The state model distinguishes source evidence, proposals, creator-approved
+decisions, explicit deferrals, work status, and human approvals; a future
+collaborator can understand project state without relying on tacit knowledge.
 
 ## Task order
 
