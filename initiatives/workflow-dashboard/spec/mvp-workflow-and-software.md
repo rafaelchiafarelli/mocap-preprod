@@ -334,15 +334,17 @@ not project completion.
 |---|---|---|
 | Windows + WSL2 (Ubuntu) | Current development/runtime environment | Already available |
 | Visual Studio Code with Remote - WSL | Edit and debug from the current workspace | Already available |
-| Node.js 22 LTS or newer compatible LTS | Local app server, dashboard tooling, and tests | Node 22 is already available here |
-| npm | Dependencies, scripts, and reproducible development commands | Already available |
+| Python 3.12 | Local app server (backend) and its tests | Same version as the rest of Mocap Studio (`DEPENDENCIES.md`) |
+| Node.js 22 LTS or newer compatible LTS | Build and test the React UI only | Node 22 is already available here |
+| npm | UI dependencies and build scripts | Already available |
 | Git and GitHub | Version the standalone dashboard source and preserve project history | Already available |
 | Current browser / VS Code forwarded port | Open the local dashboard UI | Already available |
 | TypeScript + React + Vite | Typed local dashboard UI and development server | Proposed app dependencies |
-| Node.js + Fastify local API service | Scoped filesystem discovery, project records, and read-only Claude status polling | Proposed app dependency |
+| Python FastAPI + Pydantic local API service | Scoped filesystem discovery, project records, and read-only Claude status polling | Proposed app dependency (revised 2026-10-11 from Node.js + Fastify) |
+| `mocap-contracts` (Harpia-generated) | Messages exchanged with other Mocap Studio applications | Pinned release, as in the other repositories |
 | Markdown parser with GFM table support | Read current worklist/brief tables without ad hoc string parsing | Proposed app dependency |
-| Schema validation (for example Zod) | Validate project-local operational records and CLI output | Proposed app dependency |
-| Vitest + Testing Library | Unit/component tests for parsing, graph rules, and rendering | Proposed app dependencies |
+| Schema validation (Pydantic) | Validate project-local operational records and CLI output | Proposed app dependency |
+| pytest (backend) + Vitest/Testing Library (UI) | Tests for parsing and graph rules (backend) and rendering (UI) | Proposed app dependencies |
 | Playwright | End-to-end project-open, worklist, review, and recovery checks | Proposed dev dependency |
 
 Use exact package versions in the application lockfile when implementation
@@ -432,8 +434,8 @@ The MVP is not accepted until these cases pass:
 ## Open items to settle before implementation
 
 - Accept or revise this MVP scope and the end-to-end stage outline.
-- Accept the proposed local web application architecture and TypeScript tool
-  choices in the architecture decision record.
+- Accept the proposed local web application architecture in the architecture
+  decision record (Python backend + React UI, decided 2026-10-11).
 - Confirm the first Claude CLI status adapter against the installed CLI; the
   implementation must version-check and retain the manual fallback.
 - Define write-scope conflict behavior for non-Git project folders.
