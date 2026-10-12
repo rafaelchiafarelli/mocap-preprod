@@ -37,7 +37,7 @@ database to reconstruct project state.
 
 ### A. Local web application + Claude Code Agent View — recommended
 
-- Run a local Node.js service in the same WSL environment as the project
+- Run a local Python service in the same WSL environment as the project
   folder and Claude Code CLI.
 - Serve a React dashboard on localhost and use VS Code's forwarded port or a
   local browser to display it.
@@ -92,10 +92,18 @@ submodule.
 
 ### Runtime and UI
 
-- One local Node.js TypeScript service serves the UI and a narrow local API.
-- React + Vite provides the browser UI.
-- Fastify provides validated local API routes for project discovery, parsed
-  views, and run-status snapshots.
+- **Revised 2026-10-11 (creator decision):** the backend is **Python**, like
+  every other Mocap Studio application; the React UI is kept. This replaces the
+  earlier Node.js/Fastify proposal.
+- One local Python 3.12 service serves the built UI and a narrow local API
+  (FastAPI + Pydantic for validated routes for project discovery, parsed
+  views, and run-status snapshots).
+- React + Vite (TypeScript) provides the browser UI. It is the only non-Python
+  part of the dashboard and talks only to its own backend.
+- Messages between the dashboard and other Mocap Studio applications go
+  through **Harpia** contracts in `mocap-contracts`, used through Harpia's
+  documented interface only. The browser-to-own-backend API is not an
+  inter-application protocol and is exempt.
 - Bind the server to loopback by default. Do not expose it to a LAN or public
   host in the MVP.
 - Protect local API mutations with a per-launch session token and same-origin
