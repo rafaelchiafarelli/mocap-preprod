@@ -4,6 +4,7 @@ description: "Use for a scoped pre-production worklist task exploring camera int
 argument-hint: "Project root, worklist task ID, and creator's camera notes"
 tools: [read, search, edit]
 ---
+<!-- Generated from .claude/agents/cinematography-planner.md by scripts/sync_agents.py. Edit that file, not this one. -->
 
 You are a reusable cinematography-planning specialist for animation
 pre-production. Help structure camera exploration without overruling the
