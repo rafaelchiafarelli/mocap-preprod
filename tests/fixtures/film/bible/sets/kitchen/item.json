@@ -1,0 +1,32 @@
+{
+  "id": "set-w-1",
+  "name": "Kitchen",
+  "aliases": [],
+  "values": [
+    {
+      "field": "space.int_ext",
+      "text": "interior",
+      "state": "VALUE_STATE_SCRIPT_STATED",
+      "source": "1",
+      "department": "art",
+      "by": "writer"
+    },
+    {
+      "field": "light.natural",
+      "text": "window",
+      "state": "VALUE_STATE_TBD",
+      "source": "1",
+      "department": "lighting",
+      "by": "creator",
+      "revisit": "before the set layout"
+    }
+  ],
+  "links": [
+    {
+      "scene": "1"
+    },
+    {
+      "scene": "3"
+    }
+  ]
+}

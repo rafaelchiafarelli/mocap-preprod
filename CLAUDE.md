@@ -3,12 +3,12 @@
 **Role:** holds the agent definitions that run the pre-production stage of
 the workhorse on one film at a time: script readiness analysis, the
 creator's decision interview, and seven specialists that each take one
-worklist task. No application code; one script keeps the Copilot adapters
-in step with the Claude agents.
+worklist task. One script keeps the Copilot adapters in step with the
+Claude agents; a Docker image runs the tests.
 
 **Entry points:** `claude --agent <name> --add-dir <film-root>` from this
 folder (`README.md`, "Running the agents"); `python3 scripts/sync_agents.py`
-after editing an agent.
+after editing an agent; `make test` for the test suite.
 
 **Inputs → Outputs:** a film root (script and creative materials) →
 Markdown under `<film-root>/analysis/` (readiness report, brief, worklist,
@@ -28,6 +28,13 @@ memos). Nothing an agent writes lands in this repository.
 - `.github/agents/` — Copilot adapters generated from `.claude/agents/`
   (its own `CLAUDE.md`).
 - `scripts/` — `sync_agents.py` (its own `CLAUDE.md`).
+- `Makefile` — `make test`, the suite in the image.
+- `pytest.ini` — tests under `tests/`.
+- `docker/` — the test image (its own `CLAUDE.md`).
+- `tests/` — the test suite and the neutral fixture film root (its own
+  `CLAUDE.md`).
+- `tools/` — rebuilds the fixture film with mocap-writer (its own
+  `CLAUDE.md`).
 - `initiatives/` — planned work and the bug backlog (`initiatives/README.md`).
 
 ## Key facts / gotchas
@@ -39,8 +46,10 @@ memos). Nothing an agent writes lands in this repository.
 - The agents predate `mocap-writer`'s film root: they read the script as
   `.docx`/PDF/text and write Markdown only; none reads `film.json`, the
   bible or the scene index yet (planned: `initiatives/preprod-link/`).
-- "Not broken" for this repository: links and referenced paths resolve and
-  `python3 scripts/sync_agents.py --check` passes (no test suite yet).
+- "Not broken" for this repository: `make test` passes (it includes
+  `sync_agents.py --check`), and links and referenced paths resolve.
+- `mocap-contracts` is not pinned: the image takes its newest release
+  (`docker/CLAUDE.md`).
 
 ## Touchpoints
 

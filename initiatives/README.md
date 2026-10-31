@@ -11,10 +11,8 @@ Rules specific to this repository:
 - **Done marker:** `-done` suffix on the **file name** (`git mv` in a separate
   commit, right after the implementation commit). Never a status line.
 - **Order between epics:** in `initiatives/<initiative>/epics/README.md`.
-- **Test suite:** until `preprod-link` `environment/1` lands, "not broken"
-  means every link and referenced path resolves and
-  `python3 scripts/sync_agents.py --check` passes; after it, `pytest` in the
-  test image.
+- **Test suite:** `make test` (pytest in the Docker image, `docker/`),
+  plus every link and referenced path resolving.
 - **No film material** in this repository: no titles, scenes, characters or
   worklist ids. Tests use the neutral fixture film root.
 
