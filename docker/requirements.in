@@ -1,0 +1,7 @@
+# Direct dependencies of mocap-preprod's tests and MCP server (DEPENDENCIES.md rule B).
+pytest
+# The MCP Python SDK (MIT) for the agents' workflow tool (preprod-link workflow-tool).
+mcp
+# mocap-contracts (cloned at its newest tag into the image, on PYTHONPATH) needs only
+# protobuf (BSD-3); its own pyproject asks >=4.21.12,<5.
+protobuf>=4.21.12,<5
