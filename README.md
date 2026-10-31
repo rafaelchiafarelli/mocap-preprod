@@ -26,7 +26,8 @@ paths, assumptions, or findings to this repository.
 For a feature or other large, naturally divided film, the agent first
 creates `<film-root>/analysis/session-plan.md`, tells you which sections
 should be handled in separate sessions, and stops before claiming a complete
-assessment. The plan includes suggested prompts and tracks section coverage.
+assessment. The plan names each section's next session (agent, section,
+files to read; no prompts) and tracks section coverage.
 Run each section in its own session; a final consolidation session combines
 the section findings into the whole-film readiness report. The agent
 cannot launch those sessions for you. Triage and section work do not create a

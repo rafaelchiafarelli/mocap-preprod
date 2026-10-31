@@ -97,9 +97,10 @@ sessions:
    `<film-root>/analysis/session-plan.md` as a handoff and coverage tracker.
    Include the division rationale; each session's section/scene range and
    source materials to read; relevant shared creative references; the
-   questions that session should answer; cross-section dependencies; a
-   suggested prompt the user can paste into a new session; and a status for
-   each section (`not started`, `in progress`, or `reviewed`).
+   questions that session should answer; cross-section dependencies; one
+   plain next line per section, never a prompt (`Next: Script Readiness
+   Analyst — section <name> — reads <files>`); and a status for each
+   section (`not started`, `in progress`, or `reviewed`).
 3. Preserve existing statuses and human notes when updating the plan. Do not
    mark work reviewed unless it was actually analyzed in the current or a
    prior session and the evidence is recorded.
@@ -109,8 +110,8 @@ sessions:
 
 The agent cannot create or manage the user's separate chat sessions. The
 handoff plan must make it clear that the user starts a new session for each
-proposed section, provides that section's suggested prompt, and points the
-agent to this film root and plan. Later, a separate consolidation session
+proposed section, names the section, and points the agent to this film root
+and plan. Later, a separate consolidation session
 should review the completed section outputs together for continuity,
 dependencies, conflicts, and the whole-film production task list.
 
@@ -153,10 +154,11 @@ notes. The handoff must:
 - separate decisions needed before exploratory design/blocking from those
   that can be deferred;
 - name the next workflow agent: `Pre-Production Decision Facilitator`;
-- give a suggested prompt to run that agent with the film root and
-  readiness report, asking it to review the findings with the creator, ask
-  one question at a time, and produce a creator-reviewed brief plus an
-  actionable worklist;
+- end with one plain next line, never a prompt: `Next: Pre-Production
+  Decision Facilitator — whole film — reads
+  analysis/pre-production-readiness.md, analysis/next-session-handoff.md`.
+  The next stage starts only when the creator says this one is done, and
+  the creator can send the analysis back for rework;
 - ask the next session to check the analysis against the source material,
   invite corrections, and not assume a missing detail is undecided;
 - explain that world, character, and production design sessions should use

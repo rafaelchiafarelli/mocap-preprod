@@ -51,3 +51,14 @@ def test_the_documented_header_example_parses_and_resolves():
     scenes = {s.scene for s in index.scenes}
     assert set(m["scenes"].split(", ")) <= scenes
     assert (film / m["changes"]).exists()
+
+
+@pytest.mark.parametrize("agent", AGENTS, ids=lambda p: p.stem)
+def test_no_agent_writes_prompts_for_another(agent):
+    text = agent.read_text(encoding="utf-8").lower()
+    assert "suggested prompt" not in text and "copyable prompt" not in text
+
+
+@pytest.mark.parametrize("stem", ["script-readiness-analyst", "pre-production-decision-facilitator"])
+def test_stages_hand_over_with_a_plain_next_line(stem):
+    assert "`Next: " in (ROOT / ".claude" / "agents" / f"{stem}.md").read_text(encoding="utf-8")

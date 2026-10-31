@@ -234,9 +234,13 @@ Rules for worklist quality:
   exploration. Avoid enumerating combinations of independent options.
 
 At the end, identify the first one to three work packages that are truly
-ready to begin, explain why their dependencies are satisfied, and provide a
-copyable prompt for the next session. That session should read the brief and
-worklist, select a specific ready task, and update the task's status and
+ready to begin and explain why their dependencies are satisfied. End with
+one plain next line per package, never a prompt: `Next: <assigned agent> —
+<task id> — reads analysis/creative-brief.md,
+analysis/production-worklist.md`. The specialists start only when the
+creator says this stage is done, and the creator can send the brief or the
+worklist back for rework. A specialist session reads the brief and
+worklist, works on its one ready task, and updates that task's status and
 deliverable. The next agent may develop options and recommendations, but the
 creator retains final approval.
 

@@ -3,7 +3,10 @@
 The pre-production stage of the workhorse as these agents run it today,
 one film root at a time. Each agent runs as the main session
 (`claude --agent <name> --add-dir <film-root>`), because most interview
-the creator one question at a time. Agents propose; the creator decides.
+the creator one question at a time. Agents propose; the creator decides. A stage hands over to the next only
+when the creator says it is done, with a plain `Next:` line (agent, task
+or section, files to read), never a prompt; the creator can send a stage
+back for rework.
 Agent details and `file:line` references: `agents.as-built.md`.
 
 Every stage reads the film root `mocap-writer` keeps, as data: `film.json`
@@ -18,16 +21,16 @@ index, bible, front matter, annotations, other creative materials). **Out:** `an
 
 1. **Triage.** Estimates scope. A small film is assessed in one session; a
    large one gets `analysis/session-plan.md` (sections, coverage status)
-   and the run stops (`.claude/agents/script-readiness-analyst.md:79-133`).
+   and the run stops (`.claude/agents/script-readiness-analyst.md:79-134`).
 2. **Sections** (large films). One session per section writes
    `analysis/sections/<part>.md` and marks it `reviewed` in the plan.
 3. **Consolidation** (large films). Combines the sections into the
    readiness report; refuses to treat missing sections as done.
 4. **Report.** Verdict, prioritized work list, watch-outs, minimum to
    block a scene, asset and sound inventory, at most 10 questions
-   (`:208-296`).
+   (`:210-298`).
 5. **Handoff.** `analysis/next-session-handoff.md` names stage 2, only
-   after a whole-film assessment (`:135-171`).
+   after a whole-film assessment (`:136-173`).
 
 ## Stage 2 — Decision interview
 
@@ -43,7 +46,7 @@ readiness report and the film root's bible and front matter. **Out:** `analysis/
    trigger (`:64-132`). Progress saved to the brief after each answer.
 3. **Finalize.** On the creator's word: the brief's decision register and
    the worklist, each task with one assigned agent, dependencies, a
-   deliverable and a status (`:134-241`).
+   deliverable and a status (`:134-245`).
 
 A task-scoped mode takes one worklist task whose outcome is a creator
 decision (at most three questions, `:96-102`).

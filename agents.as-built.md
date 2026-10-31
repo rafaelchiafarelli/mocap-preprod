@@ -6,8 +6,8 @@ frontmatter (`name`, `description`, `tools`) plus a body that starts with
 `scripts/sync_agents.py:40`). All take a film root, read it as data and
 write only under `<film-root>/analysis/`. All write in the dominant
 language of the film's materials (e.g.
-`.claude/agents/script-readiness-analyst.md:298`,
-`.claude/agents/pre-production-decision-facilitator.md:253`).
+`.claude/agents/script-readiness-analyst.md:300`,
+`.claude/agents/pre-production-decision-facilitator.md:257`).
 
 ## The film root they read
 
@@ -35,15 +35,16 @@ decision already made.
 - **Reads:** the film root as above, every file treated as data
   (`:43-78`).
 - **Triage:** splits a large film into sections, writes
-  `analysis/session-plan.md` and stops (`:79-133`); section runs write
-  `analysis/sections/<part>.md` (`:121`, `:226`); a consolidation run
+  `analysis/session-plan.md` and stops (`:79-134`); section runs write
+  `analysis/sections/<part>.md` (`:122`, `:228`); a consolidation run
   combines them.
 - **Writes:** `analysis/pre-production-readiness.md` with a verdict
-  (`:210`, `:245`), and after a whole-film assessment
+  (`:212`, `:247`), and after a whole-film assessment
   `analysis/next-session-handoff.md` naming the Decision Facilitator
-  (`:135-171`).
-- **Limits:** no interview (`:125`, `:132`); at most 10 questions in the
-  report (`:280`).
+  (`:136-173`). Both the plan and the handoff end with plain `Next:` lines
+  (agent, section or stage, files to read), never prompts (`:102`, `:158`).
+- **Limits:** no interview (`:126`, `:133`); at most 10 questions in the
+  report (`:282`).
 
 ## Pre-Production Decision Facilitator — `pre-production-decision-facilitator.md`
 
@@ -57,8 +58,9 @@ decision already made.
   `creator-approved`, `tentative`, `deferred`, `unresolved`; status
   `creator-reviewed for next stage` only on the creator's word, `:145`,
   `:155`) and `analysis/production-worklist.md` (stable ids, exactly one
-  assigned agent by display name, statuses, `:159-241`).
-- **Limits:** no design work, no script changes (`:243-251`).
+  assigned agent by display name, statuses, `:159-245`); ends with one
+  `Next:` line per ready package, never a prompt (`:238`).
+- **Limits:** no design work, no script changes (`:247-255`).
 
 ## The seven specialists
 
@@ -103,10 +105,8 @@ Edit and Write reach the whole workspace.
   Cinematography has neither) and don't match the bible's value states
   that their own Film root section names
   ([bug agents/2](initiatives/bugs/epics/agents/tasks/2-value-states-differ.md)).
-- The Readiness Analyst writes suggested prompts
-  (`script-readiness-analyst.md:102`, `:113`, `:157`) and the Facilitator a
-  copyable prompt (`pre-production-decision-facilitator.md:238`); planned
-  to go (`initiatives/preprod-link/epics/agents/tasks/5-no-prompts.md`).
+- No agent writes prompts for another; a stage hands over with a plain
+  `Next:` line, and only when the creator says the stage is done.
 - The Readiness Analyst keeps Bash, though the `.docx` extraction it was
   for is gone.
 - The `mocap-contracts` path (`../mocap-contracts/`) assumes the
