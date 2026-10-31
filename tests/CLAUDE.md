@@ -20,8 +20,9 @@ mocap-contracts → pass/fail; the header names the mocap-contracts tag.
   ids and the latest change set's hash resolve (`:42`); the worklist
   assigns registered agents (`:66`).
 - `test_agents.py` — every agent names the film root it reads
-  (`film.json`, the scene index, `script.fountain`, `mocap-contracts`) and
-  no longer extracts `.docx` (`tests/test_agents.py:10-15`).
+  (`film.json`, the scene index, `mocap-contracts`; `script.fountain` for
+  all but the Decision Facilitator) and no longer extracts `.docx`
+  (`tests/test_agents.py:10-19`).
 - `fixtures/` — test data (its own `CLAUDE.md`).
 
 ## Key facts / gotchas
