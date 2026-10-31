@@ -33,8 +33,8 @@ memos). Nothing an agent writes lands in this repository.
 - `docker/` — the test image (its own `CLAUDE.md`).
 - `tests/` — the test suite and the neutral fixture film root (its own
   `CLAUDE.md`).
-- `tools/` — rebuilds the fixture film with mocap-writer (its own
-  `CLAUDE.md`).
+- `tools/` — rebuilds the fixture film with mocap-writer's generator,
+  cloned from GitHub (its own `CLAUDE.md`).
 - `initiatives/` — planned work and the bug backlog (`initiatives/README.md`).
 
 ## Key facts / gotchas
