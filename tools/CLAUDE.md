@@ -2,31 +2,28 @@
 
 **Role:** rebuild test data. Not used by the tests or the agents.
 
-**Entry points:** `tools/make_fixture_film.sh [path to mocap-writer]`.
+**Entry points:** `tools/make_fixture_film.sh [ref]` (a mocap-writer
+branch or tag; default `dev`).
 
-**Inputs → Outputs:** a `mocap-writer` checkout (default
-`../mocap-writer`) → `tests/fixtures/film/` (its `analysis/` kept).
+**Inputs → Outputs:** mocap-writer at `ref`, cloned from GitHub →
+`tests/fixtures/film/` (its `analysis/` kept).
 
 ## Files
 
-- `make_fixture_film.sh` — builds mocap-writer's image, runs the Python
-  script in it with the writer mounted read-only
-  (`tools/make_fixture_film.sh:13-17`), replaces the fixture but its
-  `analysis/` (`:19-22`), prints the writer commit it used.
-- `make_fixture_film.py` — the film made through the writer's own code:
-  `Film.create`, `Bible.create`/`setValues`/`link`, the front matter, two
-  annotations (`tools/make_fixture_film.py:62-104`), then a sync accepted
-  on the first draft and on the edited one (`:106`, `:111`). Scripts at
-  `:28` and `:51`.
+- `make_fixture_film.sh` — shallow-clones mocap-writer over HTTPS with its
+  submodules (`tools/make_fixture_film.sh:14-15`), builds the writer's
+  image from the clone and runs the writer's own
+  `tools/make_fixture_film.py` in it (`:17-21`), replaces the fixture but
+  its `analysis/` (`:23-26`), prints the writer commit it used (`:27`).
 
 ## Key facts / gotchas
 
-- `make_fixture_film.py` imports mocap-writer's code, so it runs only in
-  the writer's image and nothing in this repository imports it: the
-  writer is used as a tool, like a creator would use it. Repositories
-  still never import each other's code.
-- Needs Docker and the writer checkout beside this repository.
+- The generator lives in mocap-writer (Rafael, 2026-10-31): it uses the
+  writer's code, and this repository never imports it. Cloning makes the
+  rebuild work from a lone download of this repository.
+- Needs Docker and network access to GitHub; no writer checkout.
 
 ## Touchpoints
 
-- `mocap-writer` (its image and code), `tests/fixtures/film/` (written).
+- `mocap-writer` (cloned: its image and `tools/make_fixture_film.py`),
+  `tests/fixtures/film/` (written).
