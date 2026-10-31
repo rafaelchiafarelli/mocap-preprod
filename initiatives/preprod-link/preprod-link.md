@@ -1,7 +1,7 @@
 # preprod-link — mocap-preprod
 
-**Status:** Planned — not started (Rafael, 2026-10-31). Comes after
-`as-built`.
+**Status:** Planned — not started (Rafael, 2026-10-31). `as-built` done
+2026-10-31.
 
 **Goal:** the agents work from the film root `mocap-writer` keeps: they
 read its index, scene index, bible and change sets, cite scene numbers
