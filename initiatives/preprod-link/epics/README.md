@@ -1,6 +1,6 @@
 # preprod-link — epics (execution order)
 
-1. **environment** — the test image and the neutral fixture film root (2 tasks)
+1. **environment** — the test image and the neutral fixture film root (3 tasks)
 2. **workflow-tool** — the MCP server the agents write through (3 tasks)
 3. **agents** — read path, incremental runs, proposals, requests, no prompts (5 tasks)
 
