@@ -5,10 +5,10 @@
   Performance, Props and Sound use `script-stated`; the Cinematography Planner has neither. The bible's
   value states (`mocap-contracts` `bible.harpia`, `ValueState`) are
   `script-stated`, `creator-approved`, `proposal`, `tbd`.
-- **Where:** `.claude/agents/story-editorial-analyst.md:94`,
-  `.claude/agents/visual-development-analyst.md:81`,
-  `.claude/agents/character-design-planner.md:88`,
-  `.claude/agents/cinematography-planner.md:90`.
+- **Where:** `.claude/agents/story-editorial-analyst.md:121`,
+  `.claude/agents/visual-development-analyst.md:108`,
+  `.claude/agents/character-design-planner.md:115`,
+  `.claude/agents/cinematography-planner.md:117`.
 - **Reproduce:** found by reading the code.
 - **Impact:** registers from different agents can't be compared or parsed
   the same way (the dashboard, the bible proposals of `preprod-link`).

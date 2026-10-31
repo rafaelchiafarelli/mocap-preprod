@@ -56,11 +56,39 @@ task's worklist row.
 
 1. **Routing.** The task's `Assigned agent` must name the agent, or it
    stops.
-2. **Work.** Options and a production-facing specification with stable
+2. **Work.** A full run, or a change-set run on the scenes a sync
+   changed (below). Options and a production-facing specification with stable
    ids and a state per entry; at most three questions (except the Visual
    Development Analyst, see `agents.as-built.md`).
 3. **Deliverable.** The memo, the row's status and deliverable link;
    film-wide direction changes go back to stage 2.
+
+## Change-set runs and the memo header
+
+After the creator accepts a sync in the writer, a specialist can run on
+the change set instead of the whole task: it reworks only the scenes the
+change set lists and the bible items those scenes link, and leaves the
+rest of its memo as it is. Every specialist memo starts with a header
+that says what it covers, so code can tell which memos a change set
+touches without reading them:
+
+```
+Covers: scenes 1, 3; items prop-w-1, set-w-1
+Change set: bible/sync/20261031T130000Z-changes.json
+Not revisited: scenes 1; items set-w-1
+```
+
+- `Covers:` `scenes` then `items`, separated by `; `, each a list
+  separated by `, `: scene numbers and bible ids exactly as
+  `bible/scene-index.json` writes them, or `none`.
+- `Change set:` the `bible/sync/` file the run answered, or `none` on a
+  full run.
+- `Not revisited:` same shape as `Covers:`: what the memo covers that this
+  run did not rework; `none` on a full run.
+
+A memo is touched by a change set when a scene the change set lists is in
+its `Covers:` scenes, or when one of its `Covers:` items is linked from such
+a scene in the scene index.
 
 ## What the stage does not do
 

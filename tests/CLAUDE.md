@@ -22,7 +22,9 @@ mocap-contracts → pass/fail; the header names the mocap-contracts tag.
 - `test_agents.py` — every agent names the film root it reads
   (`film.json`, the scene index, `mocap-contracts`; `script.fountain` for
   all but the Decision Facilitator) and no longer extracts `.docx`
-  (`tests/test_agents.py:10-19`).
+  (`tests/test_agents.py:12-22`); every specialist keeps the change-set
+  header (`:34-40`); the header example in `preprod.process.md` parses and
+  names real scenes and a real change set of the fixture (`:43`).
 - `fixtures/` — test data (its own `CLAUDE.md`).
 
 ## Key facts / gotchas
