@@ -24,7 +24,9 @@ mocap-contracts → pass/fail; the header names the mocap-contracts tag.
   all but the Decision Facilitator) and no longer extracts `.docx`
   (`tests/test_agents.py:12-22`); every specialist keeps the change-set
   header (`:34-40`); the header example in `preprod.process.md` parses and
-  names real scenes and a real change set of the fixture (`:43`).
+  names real scenes and a real change set of the fixture (`:43`); no agent
+  writes a prompt (`:56-59`) and both stages hand over with a `Next:` line
+  (`:62-64`).
 - `fixtures/` — test data (its own `CLAUDE.md`).
 
 ## Key facts / gotchas
