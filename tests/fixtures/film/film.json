@@ -1,0 +1,45 @@
+{
+  "format_version": 1,
+  "origin": {
+    "program": "mocap-writer",
+    "version": "2.4.16.2"
+  },
+  "parts": [
+    {
+      "name": "script",
+      "path": "script.fountain",
+      "owner": "writer"
+    },
+    {
+      "name": "settings",
+      "path": "settings/script-settings.json",
+      "owner": "writer"
+    },
+    {
+      "name": "front-matter",
+      "path": "settings/front-matter.json",
+      "owner": "writer"
+    },
+    {
+      "name": "bible",
+      "path": "bible/",
+      "owner": "writer"
+    },
+    {
+      "name": "annotations",
+      "path": "annotations/",
+      "owner": "writer"
+    },
+    {
+      "name": "history",
+      "path": "history/",
+      "owner": "writer"
+    }
+  ],
+  "spaces": [
+    {
+      "code": "w",
+      "owner": "writer"
+    }
+  ]
+}

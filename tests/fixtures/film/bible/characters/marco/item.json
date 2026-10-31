@@ -1,0 +1,23 @@
+{
+  "id": "character-w-2",
+  "name": "Marco",
+  "aliases": [],
+  "values": [
+    {
+      "field": "identity.occupation",
+      "text": "baker",
+      "state": "VALUE_STATE_CREATOR_APPROVED",
+      "source": "decision",
+      "department": "story",
+      "by": "creator"
+    }
+  ],
+  "links": [
+    {
+      "scene": "1"
+    },
+    {
+      "scene": "3"
+    }
+  ]
+}

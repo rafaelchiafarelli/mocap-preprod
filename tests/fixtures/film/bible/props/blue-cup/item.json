@@ -1,0 +1,32 @@
+{
+  "id": "prop-w-1",
+  "name": "Blue Cup",
+  "aliases": [],
+  "values": [
+    {
+      "field": "look.color",
+      "text": "blue",
+      "state": "VALUE_STATE_SCRIPT_STATED",
+      "source": "1",
+      "department": "props",
+      "by": "writer"
+    },
+    {
+      "field": "state.state",
+      "scene": "1",
+      "text": "full",
+      "state": "VALUE_STATE_SCRIPT_STATED",
+      "source": "1",
+      "department": "props",
+      "by": "writer"
+    }
+  ],
+  "links": [
+    {
+      "scene": "1"
+    },
+    {
+      "scene": "3"
+    }
+  ]
+}

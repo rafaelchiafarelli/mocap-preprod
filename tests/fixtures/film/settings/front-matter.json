@@ -1,0 +1,26 @@
+{
+  "title": {
+    "title": "THE BLUE CUP",
+    "subtitle": "A neutral test film",
+    "episode": "",
+    "author": "Test Author",
+    "co_authors": [],
+    "email": ""
+  },
+  "overview": {
+    "include": "FLAG_OFF",
+    "cast": "FLAG_ON",
+    "sets": "FLAG_ON",
+    "acts": "FLAG_ON"
+  },
+  "pitch": {
+    "include": "FLAG_ON",
+    "pitch": "",
+    "logline": "Two people wait out the rain in a small kitchen.",
+    "target_audience": ""
+  },
+  "argument": {
+    "include": "FLAG_OFF",
+    "text": ""
+  }
+}

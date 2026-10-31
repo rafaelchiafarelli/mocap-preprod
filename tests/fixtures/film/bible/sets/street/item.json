@@ -1,0 +1,20 @@
+{
+  "id": "set-w-2",
+  "name": "Street",
+  "aliases": [],
+  "values": [
+    {
+      "field": "space.int_ext",
+      "text": "exterior",
+      "state": "VALUE_STATE_SCRIPT_STATED",
+      "source": "2",
+      "department": "art",
+      "by": "writer"
+    }
+  ],
+  "links": [
+    {
+      "scene": "2"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "id": "annotation-w-2",
+  "kind": "ANNOTATION_KIND_SHOT",
+  "anchor": {
+    "scene": "1"
+  },
+  "text": "Wide on the table, both of them in frame.",
+  "by": "creator",
+  "shot": 1,
+  "values": []
+}
