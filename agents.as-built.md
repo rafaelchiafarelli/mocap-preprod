@@ -65,27 +65,33 @@ decision already made.
 Same shape in every file: **Entry and scope** (a film root and a worklist
 task id; reads the task, the brief, the readiness report and the relevant
 script passages; stops on a routing mismatch with the task's `Assigned
-agent`), **Film root**, **Work**, **Bounded creator decisions** (at most
+agent`), **Film root**, **Change-set runs**, **Work**, **Bounded creator decisions** (at most
 three questions, one recommendation and at most one alternative),
 **Production-facing specification** (a structured register with stable
 ids and a state per entry), **Deliverable and handoff** (one memo, and
 only that task's worklist row). Tools: Read, Grep, Glob, Edit, Write.
 
-| Agent | File | Film root | Bible maps read | Memo `analysis/work/<task-id>-…` | Questions | States used |
-|---|---|---|---|---|---|---|
-| Story & Editorial Analyst | `story-editorial-analyst.md` | `:37` | characters, sets | `story-editorial.md` (`:105`) | `:77` | `established`, `creator-approved`, `proposal`, `TBD` (`:94`) |
-| Visual Development Analyst | `visual-development-analyst.md` | `:38` | sets, props (dressing) | `visual-development.md` (`:92`) | none (bug, below) | `established`, `creator-approved`, `proposal`, `TBD` (`:81`) |
-| Character Design Planner | `character-design-planner.md` | `:36` | characters, wardrobe | `character-design.md` (`:99`) | `:70` | `established`, `creator-approved`, `proposal`, `TBD` (`:88`) |
-| Performance & Editorial Planner | `performance-editorial-planner.md` | `:36` | characters | `performance-editorial.md` (`:105`) | `:76` | `script-stated`, `creator-approved`, `proposal`, `TBD` (`:95`) |
-| Props & Continuity Planner | `props-continuity-planner.md` | `:35` | props, wardrobe (handled) | `props-continuity.md` (`:101`) | `:73` | `script-stated`, `creator-approved`, `proposal`, `TBD` (`:91`) |
-| Sound Design Planner | `sound-design-planner.md` | `:35` | sets, characters (voice) | `sound-design.md` (`:98`) | `:71` | `script-stated`, `creator-approved`, `proposal`, `TBD` (`:88`) |
-| Cinematography Planner | `cinematography-planner.md` | `:37` | sets; shots `S1`, `S2` | `cinematography.md` (`:100`) | `:71` | `creator-approved`, `proposal`, `TBD` (`:90`) |
+| Agent | File | Film root | Change-set runs | Bible maps read | Memo `analysis/work/<task-id>-…` | Questions | States used |
+|---|---|---|---|---|---|---|---|
+| Story & Editorial Analyst | `story-editorial-analyst.md` | `:37` | `:59` | characters, sets | `story-editorial.md` (`:132`) | `:104` | `established`, `creator-approved`, `proposal`, `TBD` (`:121`) |
+| Visual Development Analyst | `visual-development-analyst.md` | `:38` | `:60` | sets, props (dressing) | `visual-development.md` (`:119`) | none (bug, below) | `established`, `creator-approved`, `proposal`, `TBD` (`:108`) |
+| Character Design Planner | `character-design-planner.md` | `:36` | `:58` | characters, wardrobe | `character-design.md` (`:126`) | `:97` | `established`, `creator-approved`, `proposal`, `TBD` (`:115`) |
+| Performance & Editorial Planner | `performance-editorial-planner.md` | `:36` | `:58` | characters | `performance-editorial.md` (`:132`) | `:103` | `script-stated`, `creator-approved`, `proposal`, `TBD` (`:122`) |
+| Props & Continuity Planner | `props-continuity-planner.md` | `:35` | `:57` | props, wardrobe (handled) | `props-continuity.md` (`:128`) | `:100` | `script-stated`, `creator-approved`, `proposal`, `TBD` (`:118`) |
+| Sound Design Planner | `sound-design-planner.md` | `:35` | `:57` | sets, characters (voice) | `sound-design.md` (`:125`) | `:98` | `script-stated`, `creator-approved`, `proposal`, `TBD` (`:115`) |
+| Cinematography Planner | `cinematography-planner.md` | `:37` | `:59` | sets; shots `S1`, `S2` | `cinematography.md` (`:127`) | `:98` | `creator-approved`, `proposal`, `TBD` (`:117`) |
+
+Each memo starts with the change-set header (`Covers:`, `Change set:`,
+`Not revisited:`); its grammar is in `preprod.process.md`, "Change-set
+runs and the memo header". A change-set run reworks only the scenes the
+change set lists and the items they link, and stops without editing when
+the memo covers none of them.
 
 The edit limit ("the only files this agent may edit") is at
-`story-editorial-analyst.md:114`, `visual-development-analyst.md:101`,
-`character-design-planner.md:108`, `performance-editorial-planner.md:114`,
-`props-continuity-planner.md:110`, `sound-design-planner.md:106`,
-`cinematography-planner.md:109`. It is an instruction, not a permission:
+`story-editorial-analyst.md:141`, `visual-development-analyst.md:128`,
+`character-design-planner.md:135`, `performance-editorial-planner.md:141`,
+`props-continuity-planner.md:137`, `sound-design-planner.md:133`,
+`cinematography-planner.md:136`. It is an instruction, not a permission:
 Edit and Write reach the whole workspace.
 
 ## Key facts / gotchas
