@@ -6,8 +6,8 @@ against. No film material.
 **Entry points:** — (read by `tests/`; rebuilt by
 `tools/make_fixture_film.sh`).
 
-**Inputs → Outputs:** mocap-writer's own code → `film/` (everything but
-`film/analysis/`, which is hand-written).
+**Inputs → Outputs:** mocap-writer's `tools/make_fixture_film.py` →
+`film/` (everything but `film/analysis/`, which is hand-written).
 
 ## Files
 
@@ -26,8 +26,8 @@ against. No film material.
 
 ## Key facts / gotchas
 
-- Built from mocap-writer `d74f9f9`; rebuilding takes the writer's
-  current code, so the files can change with the writer.
+- Built from mocap-writer `00bda75` (`dev`); rebuilding takes the
+  writer's code at the ref given, so the files can change with the writer.
 - Two gaps on purpose, for "ask the creator" cases: scene `2.A`'s BUS has
   no set, and the prop word `KEY` has no bible item.
 - A change set's `to_hash` is the sha256 of the `scene-index.json` text it
