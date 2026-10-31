@@ -25,6 +25,6 @@ The workflow-dashboard initiative moved to
 
 | Initiative | Status |
 |---|---|
-| [as-built](as-built/as-built.md) | Planned — initiative 0: the as-built docs, before preprod-link |
+| **as-built** | Done 2026-10-31 — initiative 0: `CLAUDE.md` per folder, `agents.as-built.md`, `preprod.process.md` (history: `git log -- initiatives/as-built`) |
 | [bugs](bugs/bugs.md) | Open — a backlog, fixed when a bug gets in the way |
 | [preprod-link](preprod-link/preprod-link.md) | Planned — the agents read the writer's film root and propose through the workflow database |
