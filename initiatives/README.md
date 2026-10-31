@@ -26,4 +26,5 @@ The workflow-dashboard initiative moved to
 | Initiative | Status |
 |---|---|
 | [as-built](as-built/as-built.md) | Planned — initiative 0: the as-built docs, before preprod-link |
+| [bugs](bugs/bugs.md) | Open — a backlog, fixed when a bug gets in the way |
 | [preprod-link](preprod-link/preprod-link.md) | Planned — the agents read the writer's film root and propose through the workflow database |
