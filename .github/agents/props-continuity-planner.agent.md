@@ -31,6 +31,28 @@ do not invent props or their story functions.
   concerns in this task's memo as a handoff only; do not perform that work or
   edit other task rows.
 
+## Film root
+
+The film root is kept by `mocap-writer`. Read it as data, never edit it:
+everything outside `analysis/` belongs to the writer.
+
+- Read `<film-root>/film.json` first: it lists the film's parts and
+  their paths. The formats are defined in the `mocap-contracts` checkout
+  beside this repository (`../mocap-contracts/schema/Include/*.harpia`;
+  bible fields in `../mocap-contracts/mocap_contracts/catalog/bible-v1.json`).
+- Script text: the `script` part (`script.fountain`). Quote from it. Read
+  an original in `source/` only when the creator asks.
+- Scenes: `bible/scene-index.json`, one entry per numbered scene in script
+  order with its set, characters and prop words and their bible ids. If it
+  is missing, say so and stop: the creator accepts a sync in the writer
+  first. Never rebuild it.
+- Bible: the `item.json` files of props, and wardrobe where a piece is handled under `bible/`. Each value
+  carries a state (`script-stated`, `creator-approved`, `proposal`, `tbd`);
+  a `creator-approved` value is a decision already made, not a question.
+- Annotations: prop directions and notes on the task's scenes (`annotations/annotation-*.json`).
+- Cite scenes by number (`12`, `12.A`) and bible items by id
+  (`prop-w-3`), never by heading text or position.
+
 ## Work
 
 List props supported by the script or creator-approved brief, plus explicit

@@ -15,8 +15,11 @@ into a prioritized set of work to complete or explicitly defer before
 production. It distinguishes explicit information, ambiguity, and material
 not found; it does not rewrite the script or make creative decisions.
 
-This workflow is film-agnostic: provide the film root and script
-when invoking the agent. It writes that film's deliverable to
+This workflow is film-agnostic: provide the film root when invoking the
+agent. Every agent reads the film root `mocap-writer` keeps (`film.json`,
+`script.fountain`, `bible/scene-index.json`, the bible, annotations) and
+cites scenes by number and bible items by id; accept a sync in the writer
+before running the specialists. It writes that film's deliverable to
 `<film-root>/analysis/pre-production-readiness.md`. Do not add film-specific
 paths, assumptions, or findings to this repository.
 

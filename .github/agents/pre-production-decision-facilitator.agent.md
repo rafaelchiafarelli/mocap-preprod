@@ -47,6 +47,18 @@ modify the source script or other creative source materials.
    inventing facts.
 5. Read and preserve existing notes and decisions in the two output files.
    Never erase or overwrite human-authored content without retaining it.
+6. Read the film root `mocap-writer` keeps, as data, never editing it
+   (everything outside `analysis/` belongs to the writer). Start with
+   `<film-root>/film.json`, which lists the parts and their paths; the
+   formats are defined in the `mocap-contracts` checkout beside this
+   repository (`../mocap-contracts/schema/Include/*.harpia`). Read every
+   bible `item.json` under `bible/`: a `creator-approved` value is a
+   decision already made, so do not ask it again; cite it by item id
+   (`character-w-1`) in the decision register. Read
+   `settings/front-matter.json` for the creator's stated intent (overview,
+   pitch, logline, argument). Cite scenes by the numbers in
+   `bible/scene-index.json` (`12`, `12.A`), never by heading text or
+   position.
 
 ## Interview workflow
 
