@@ -15,6 +15,11 @@ mocap-contracts → pass/fail; the header names the mocap-contracts tag.
 - `test_environment.py` — mocap-contracts imports from the image
   (`tests/test_environment.py:9-13`); the Copilot adapters are current
   (`sync_agents.py --check`, `:16-22`).
+- `test_fixture_film.py` — the fixture film root: every record reads with
+  `mocap_contracts` (`tests/test_fixture_film.py:22`); scene numbers,
+  ids and the latest change set's hash resolve (`:42`); the worklist
+  assigns registered agents (`:66`).
+- `fixtures/` — test data (its own `CLAUDE.md`).
 
 ## Key facts / gotchas
 
@@ -22,4 +27,5 @@ mocap-contracts → pass/fail; the header names the mocap-contracts tag.
 
 ## Touchpoints
 
-- `docker/` (the image), `scripts/sync_agents.py` (checked).
+- `docker/` (the image), `scripts/sync_agents.py` (checked),
+  `tools/make_fixture_film.sh` (rebuilds `fixtures/film/`).

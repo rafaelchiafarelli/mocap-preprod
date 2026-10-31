@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-31T13:00:00Z",
+  "from_hash": "9d047b97bc97a473295fbe9758816570b59fa7998171517dfd05e453d25a4b23",
+  "to_hash": "70efd2add641418d49fe4a071d9d770952524fdf41518fd9d95d8f16f1df4e66",
+  "changes": [
+    {
+      "type": "SCENE_CHANGE_TYPE_SCENE_ADDED",
+      "scene": "2.A",
+      "new_value": "INT. BUS - DAY"
+    },
+    {
+      "type": "SCENE_CHANGE_TYPE_TEXT_CHANGED",
+      "scene": "3"
+    },
+    {
+      "type": "SCENE_CHANGE_TYPE_PROP_ADDED",
+      "scene": "3",
+      "new_value": "KEY"
+    }
+  ]
+}

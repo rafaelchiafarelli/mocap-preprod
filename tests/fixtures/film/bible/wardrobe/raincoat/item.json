@@ -1,0 +1,21 @@
+{
+  "id": "wardrobe-w-1",
+  "name": "Raincoat",
+  "aliases": [],
+  "values": [
+    {
+      "field": "piece.garment",
+      "text": "raincoat",
+      "state": "VALUE_STATE_CREATOR_APPROVED",
+      "source": "decision",
+      "department": "wardrobe",
+      "by": "creator"
+    }
+  ],
+  "links": [
+    {
+      "scene": "2",
+      "item": "character-w-1"
+    }
+  ]
+}

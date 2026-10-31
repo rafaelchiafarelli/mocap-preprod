@@ -1,0 +1,120 @@
+{
+  "script_hash": "fd9beb4859f23dd36c6ba0161e722c65e870f72a347dce1a0b0d820c327edb35",
+  "scenes": [
+    {
+      "scene": "1",
+      "order": 1,
+      "int_ext": "INT.",
+      "location": "KITCHEN",
+      "time_of_day": "NIGHT",
+      "set_id": "set-w-1",
+      "characters": [
+        {
+          "name": "ANA",
+          "id": "character-w-1",
+          "speaks": "FLAG_ON"
+        },
+        {
+          "name": "MARCO",
+          "id": "character-w-2",
+          "speaks": "FLAG_ON"
+        }
+      ],
+      "props": [
+        {
+          "word": "BLUE CUP",
+          "id": "prop-w-1"
+        }
+      ],
+      "first_page": 1,
+      "last_page": 1,
+      "first_line": 1,
+      "last_line": 7,
+      "text_hash": "9e0bec3242ff3617b93fb689d89289bcf126f22a01a32bc61f7fda22781b57d7"
+    },
+    {
+      "scene": "2",
+      "order": 2,
+      "int_ext": "EXT.",
+      "location": "STREET",
+      "time_of_day": "DAY",
+      "set_id": "set-w-2",
+      "characters": [
+        {
+          "name": "Ana",
+          "id": "character-w-1",
+          "speaks": "FLAG_OFF"
+        }
+      ],
+      "props": [
+        {
+          "word": "UMBRELLA",
+          "id": "prop-w-3"
+        },
+        {
+          "word": "LETTER",
+          "id": "prop-w-2"
+        }
+      ],
+      "first_page": 1,
+      "last_page": 1,
+      "first_line": 8,
+      "last_line": 9,
+      "text_hash": "fcd4627bdc2e810b1e0871e4cc5232f97c0e7584549e676e8324bbfba7f1c92a"
+    },
+    {
+      "scene": "2.A",
+      "order": 3,
+      "int_ext": "INT.",
+      "location": "BUS",
+      "time_of_day": "DAY",
+      "characters": [
+        {
+          "name": "Ana",
+          "id": "character-w-1",
+          "speaks": "FLAG_OFF"
+        }
+      ],
+      "props": [
+        {
+          "word": "LETTER",
+          "id": "prop-w-2"
+        }
+      ],
+      "first_page": 1,
+      "last_page": 1,
+      "first_line": 10,
+      "last_line": 11,
+      "text_hash": "2435235f7ac62e67f7aeffe396ae0aa34b8ac1722c07ccf0fbba7f65df4c9096"
+    },
+    {
+      "scene": "3",
+      "order": 4,
+      "int_ext": "INT.",
+      "location": "KITCHEN",
+      "time_of_day": "DAY",
+      "set_id": "set-w-1",
+      "characters": [
+        {
+          "name": "Marco",
+          "id": "character-w-2",
+          "speaks": "FLAG_OFF"
+        }
+      ],
+      "props": [
+        {
+          "word": "BLUE CUP",
+          "id": "prop-w-1"
+        },
+        {
+          "word": "KEY"
+        }
+      ],
+      "first_page": 1,
+      "last_page": 1,
+      "first_line": 12,
+      "last_line": 13,
+      "text_hash": "07baf9e20e77e675cd6e2c747d8f672af5ead86aa599c42eb9f640ff0e0a571d"
+    }
+  ]
+}
