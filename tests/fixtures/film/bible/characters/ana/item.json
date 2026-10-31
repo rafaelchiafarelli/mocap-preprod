@@ -1,0 +1,27 @@
+{
+  "id": "character-w-1",
+  "name": "Ana",
+  "aliases": [],
+  "values": [
+    {
+      "field": "identity.age",
+      "number": "34",
+      "unit": "year",
+      "state": "VALUE_STATE_CREATOR_APPROVED",
+      "source": "decision",
+      "department": "story",
+      "by": "creator"
+    }
+  ],
+  "links": [
+    {
+      "scene": "1"
+    },
+    {
+      "scene": "2"
+    },
+    {
+      "scene": "2.A"
+    }
+  ]
+}

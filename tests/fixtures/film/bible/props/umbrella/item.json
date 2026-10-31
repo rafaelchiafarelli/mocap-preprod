@@ -1,0 +1,11 @@
+{
+  "id": "prop-w-3",
+  "name": "Umbrella",
+  "aliases": [],
+  "values": [],
+  "links": [
+    {
+      "scene": "2"
+    }
+  ]
+}

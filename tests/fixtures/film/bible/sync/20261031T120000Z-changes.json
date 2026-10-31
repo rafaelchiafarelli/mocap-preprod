@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-31T12:00:00Z",
+  "to_hash": "9d047b97bc97a473295fbe9758816570b59fa7998171517dfd05e453d25a4b23",
+  "changes": [
+    {
+      "type": "SCENE_CHANGE_TYPE_SCENE_ADDED",
+      "scene": "1",
+      "new_value": "INT. KITCHEN - NIGHT"
+    },
+    {
+      "type": "SCENE_CHANGE_TYPE_SCENE_ADDED",
+      "scene": "2",
+      "new_value": "EXT. STREET - DAY"
+    },
+    {
+      "type": "SCENE_CHANGE_TYPE_SCENE_ADDED",
+      "scene": "3",
+      "new_value": "INT. KITCHEN - DAY"
+    }
+  ]
+}

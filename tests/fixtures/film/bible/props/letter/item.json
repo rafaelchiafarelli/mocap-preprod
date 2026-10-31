@@ -1,0 +1,14 @@
+{
+  "id": "prop-w-2",
+  "name": "Letter",
+  "aliases": [],
+  "values": [],
+  "links": [
+    {
+      "scene": "2"
+    },
+    {
+      "scene": "2.A"
+    }
+  ]
+}
