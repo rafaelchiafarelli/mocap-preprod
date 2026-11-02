@@ -3,7 +3,8 @@
 **Role:** holds the agent definitions that run the pre-production stage of
 the workhorse on one film at a time: script readiness analysis, the
 creator's decision interview, and seven specialists that each take one
-worklist task. One script keeps the Copilot adapters in step with the
+worklist task. An MCP server is their way into the film's workflow
+database. One script keeps the Copilot adapters in step with the
 Claude agents; a Docker image runs the tests.
 
 **Entry points:** `claude --agent <name> --add-dir <film-root>` from this
@@ -29,6 +30,10 @@ memos). Nothing an agent writes lands in this repository.
 - `.github/agents/` — Copilot adapters generated from `.claude/agents/`
   (its own `CLAUDE.md`).
 - `scripts/` — `sync_agents.py` (its own `CLAUDE.md`).
+- `workflow_tool/` — the agents' MCP server (its own `CLAUDE.md`).
+- `.mcp.json`, `.vscode/mcp.json` — how Claude Code and Copilot start that
+  server, through `docker/mcp.sh`. Claude Code takes the film root from
+  `MOCAP_FILM_ROOT`, Copilot asks for it.
 - `Makefile` — `make test`, the suite in the image.
 - `pytest.ini` — tests under `tests/`.
 - `docker/` — the test image (its own `CLAUDE.md`).
@@ -40,9 +45,9 @@ memos). Nothing an agent writes lands in this repository.
 
 ## Key facts / gotchas
 
-- `.claude/agents/` holds agent files only: `scripts/sync_agents.py:66`
+- `.claude/agents/` holds agent files only: `scripts/sync_agents.py:75`
   reads every `*.md` there as an agent and fails on one without
-  frontmatter (`scripts/sync_agents.py:30`), and Claude Code loads agents
+  frontmatter (`scripts/sync_agents.py:31`), and Claude Code loads agents
   from it. Its as-built lives in `agents.as-built.md` here.
 - The agents read the film root `mocap-writer` keeps (`film.json`, the
   script, the scene index, the bible, annotations) and write Markdown

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "workflow": {
+      "command": "docker/mcp.sh",
+      "args": ["${MOCAP_FILM_ROOT:-}"]
+    }
+  }
+}

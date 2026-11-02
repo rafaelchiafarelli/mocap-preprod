@@ -27,6 +27,13 @@ mocap-contracts → pass/fail; the header names the mocap-contracts tag.
   names real scenes and a real change set of the fixture (`:43`); no agent
   writes a prompt (`:56-59`) and both stages hand over with a `Next:` line
   (`:62-64`).
+- `test_workflow_tool.py` — the MCP server over real stdio
+  (`tests/test_workflow_tool.py:52`): it answers `film_spaces`, makes the
+  database where the part says, refuses an agent without a space, the writer,
+  a film without the part, a broken `film.json` or database; the clients'
+  config; the Copilot tool mapping. It copies the fixture and adds the part
+  and a space (`:38`), as the fixture comes from the writer, which registers
+  them only with `workflow-link`; the untouched copy is the refused film.
 - `fixtures/` — test data (its own `CLAUDE.md`).
 
 ## Key facts / gotchas
