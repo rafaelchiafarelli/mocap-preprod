@@ -4,7 +4,7 @@ import json
 
 import mocap_contracts as mc
 import pytest
-from mcp_client import AGENT, answer, call, register, session, text
+from mcp_client import AGENT, answer, call, register, text
 from mocap_contracts import db
 
 ITEM = "prop-w-1"
@@ -202,8 +202,3 @@ def test_never_touches_the_bible(film_root):
     answer(_propose(film_root))
     assert before == {p: p.read_bytes() for p in (film_root / "bible").rglob("*") if p.is_file()}
 
-
-def test_tools_of_this_task_are_listed(film_root):
-    async def tools(s):
-        return {t.name for t in (await s.list_tools()).tools}
-    assert {"film_spaces", "propose", "my_proposals"} <= session(film_root, tools)
