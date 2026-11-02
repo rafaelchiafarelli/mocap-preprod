@@ -112,5 +112,5 @@ Edit and Write reach the whole workspace.
 - The `mocap-contracts` path (`../mocap-contracts/`) assumes the
   `mocap-studio` layout; a lone download of this repository has no such
   checkout.
-- Nobody writes to the film root outside `analysis/` yet: proposals and
-  requests come with `preprod-link` workflow-tool.
+- Nobody writes to the film root outside `analysis/` yet: `workflow_tool/`
+  exists, and the agents get it with `preprod-link` agents/3 and 4.
