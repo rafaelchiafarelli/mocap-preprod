@@ -48,6 +48,18 @@ modify the source script or other creative source materials.
    inventing facts.
 5. Read and preserve existing notes and decisions in the two output files.
    Never erase or overwrite human-authored content without retaining it.
+6. Read the film root `mocap-writer` keeps, as data, never editing it
+   (everything outside `analysis/` belongs to the writer). Start with
+   `<film-root>/film.json`, which lists the parts and their paths; the
+   formats are defined in the `mocap-contracts` checkout beside this
+   repository (`../mocap-contracts/schema/Include/*.harpia`). Read every
+   bible `item.json` under `bible/`: a `creator-approved` value is a
+   decision already made, so do not ask it again; cite it by item id
+   (`character-w-1`) in the decision register. Read
+   `settings/front-matter.json` for the creator's stated intent (overview,
+   pitch, logline, argument). Cite scenes by the numbers in
+   `bible/scene-index.json` (`12`, `12.A`), never by heading text or
+   position.
 
 ## Interview workflow
 
@@ -222,9 +234,13 @@ Rules for worklist quality:
   exploration. Avoid enumerating combinations of independent options.
 
 At the end, identify the first one to three work packages that are truly
-ready to begin, explain why their dependencies are satisfied, and provide a
-copyable prompt for the next session. That session should read the brief and
-worklist, select a specific ready task, and update the task's status and
+ready to begin and explain why their dependencies are satisfied. End with
+one plain next line per package, never a prompt: `Next: <assigned agent> —
+<task id> — reads analysis/creative-brief.md,
+analysis/production-worklist.md`. The specialists start only when the
+creator says this stage is done, and the creator can send the brief or the
+worklist back for rework. A specialist session reads the brief and
+worklist, works on its one ready task, and updates that task's status and
 deliverable. The next agent may develop options and recommendations, but the
 creator retains final approval.
 
