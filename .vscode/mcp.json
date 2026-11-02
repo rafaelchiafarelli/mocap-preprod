@@ -1,0 +1,16 @@
+{
+  "servers": {
+    "workflow": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/docker/mcp.sh",
+      "args": ["${input:filmRoot}"]
+    }
+  },
+  "inputs": [
+    {
+      "id": "filmRoot",
+      "type": "promptString",
+      "description": "The film root (the folder holding film.json)"
+    }
+  ]
+}

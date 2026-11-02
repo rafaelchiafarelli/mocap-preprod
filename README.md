@@ -166,8 +166,21 @@ claude --agent pre-production-decision-facilitator --add-dir <film-root>
 Then name the film root, plus the readiness report or worklist task ID, in
 the first message.
 
+The agents reach the film's workflow database through an MCP server,
+`workflow`, which runs in Docker. Claude Code takes the film root from an
+environment variable, and asks once to approve the server, on the first run:
+
+```sh
+MOCAP_FILM_ROOT=<film-root> claude --agent <agent> --add-dir <film-root>
+```
+
+The film needs a `workflow` part and a space for each agent in its `film.json`;
+without the part the server refuses to start. Without the variable the server
+just doesn't start, and the rest of the session works.
+
 **VS Code Copilot.** Open this folder as the workspace (the remote one in
 Remote VS Code), start a Copilot Chat and pick the agent from the agent picker.
+The `workflow` server asks for the film root when it starts (`.vscode/mcp.json`).
 
 ## Shared production-house documentation
 
