@@ -18,6 +18,7 @@ COPILOT_DIR = ROOT / ".github" / "agents"
 # Claude Code tool -> Copilot tool set.
 TOOL_MAP = {"Read": "read", "Grep": "search", "Glob": "search", "Edit": "edit", "Write": "edit", "Bash": "execute"}
 COPILOT_ORDER = ["read", "search", "edit", "execute"]
+MCP_RE = re.compile(r"^mcp__(?P<server>[^_]+(?:_[^_]+)*)__")
 
 DISPLAY_RE = re.compile(r"^\*\*Display name:\*\* (.+)$", re.M)
 INVOKE_RE = re.compile(r"^\*\*Invoke with:\*\* (.+)$", re.M)
@@ -35,13 +36,21 @@ def parse(path: Path) -> tuple[dict[str, str], str]:
     return meta, match.group(2)
 
 
+def copilot_tool(tool: str) -> str:
+    """A Claude tool's Copilot name. An MCP tool, mcp__<server>__<tool>, gives
+    <server>/*: the form VS Code documents, its server set in .vscode/mcp.json."""
+    if match := MCP_RE.match(tool):
+        return f"{match['server']}/*"
+    return TOOL_MAP[tool]
+
+
 def adapter(path: Path) -> str:
     meta, body = parse(path)
     display = DISPLAY_RE.search(body)
     invoke = INVOKE_RE.search(body)
     if not display or not invoke:
         raise ValueError(f"{path}: needs **Display name:** and **Invoke with:** lines")
-    tools = {TOOL_MAP[t.strip()] for t in meta["tools"].split(",")}
+    tools = {copilot_tool(t.strip()) for t in meta["tools"].split(",")}
     body = DISPLAY_RE.sub("", INVOKE_RE.sub("", body)).lstrip("\n")
     description = meta["description"].strip('"')
     return (
@@ -49,7 +58,7 @@ def adapter(path: Path) -> str:
         f'name: "{display.group(1)}"\n'
         f'description: "{description}"\n'
         f'argument-hint: "{invoke.group(1)}"\n'
-        f"tools: [{', '.join(t for t in COPILOT_ORDER if t in tools)}]\n"
+        f"tools: [{', '.join([t for t in COPILOT_ORDER if t in tools] + sorted(tools - set(COPILOT_ORDER)))}]\n"
         "---\n"
         f"<!-- Generated from .claude/agents/{path.name} by scripts/sync_agents.py. Edit that file, not this one. -->\n\n"
         f"{body}"

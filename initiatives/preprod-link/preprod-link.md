@@ -1,6 +1,6 @@
 # preprod-link — mocap-preprod
 
-**Status:** Planned — not started (Rafael, 2026-10-31). `as-built` done
+**Status:** In progress (planned by Rafael, 2026-10-31). `as-built` done
 2026-10-31.
 
 **Goal:** the agents work from the film root `mocap-writer` keeps: they
