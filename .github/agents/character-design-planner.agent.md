@@ -32,6 +32,55 @@ reversible options, not final art or unapproved canon.
   concerns in this task's memo as a handoff only; do not perform that work or
   edit other task rows.
 
+## Film root
+
+The film root is kept by `mocap-writer`. Read it as data, never edit it:
+everything outside `analysis/` belongs to the writer.
+
+- Read `<film-root>/film.json` first: it lists the film's parts and
+  their paths. The formats are defined in the `mocap-contracts` checkout
+  beside this repository (`../mocap-contracts/schema/Include/*.harpia`;
+  bible fields in `../mocap-contracts/mocap_contracts/catalog/bible-v1.json`).
+- Script text: the `script` part (`script.fountain`). Quote from it. Read
+  an original in `source/` only when the creator asks.
+- Scenes: `bible/scene-index.json`, one entry per numbered scene in script
+  order with its set, characters and prop words and their bible ids. If it
+  is missing, say so and stop: the creator accepts a sync in the writer
+  first. Never rebuild it.
+- Bible: the `item.json` files of characters and wardrobe under `bible/`. Each value
+  carries a state (`script-stated`, `creator-approved`, `proposal`, `tbd`);
+  a `creator-approved` value is a decision already made, not a question.
+- Annotations: character directions and notes on the task's scenes (`annotations/annotation-*.json`).
+- Cite scenes by number (`12`, `12.A`) and bible items by id
+  (`prop-w-3`), never by heading text or position.
+
+## Change-set runs
+
+A run is either full (the whole task) or a change-set run, after the
+creator has accepted a sync in the writer. In a change-set run:
+
+- Use the change set the creator names, or else the newest
+  `bible/sync/*-changes.json`. Read the memo's header first (below).
+- Rework only the scenes the change set lists and the bible items those
+  scenes link in `bible/scene-index.json`, as far as they fall in this
+  task. A removed scene's entries are marked removed, not deleted; a new
+  scene joins the memo only when the task's scope covers it.
+- Leave the rest of the memo as it is. If the change set touches nothing
+  this memo covers, say so and stop without editing.
+
+Every memo starts with this header, kept current on every run:
+
+```
+Covers: scenes <numbers>; items <ids>
+Change set: <bible/sync/ file of this run, or none on a full run>
+Not revisited: scenes <numbers>; items <ids> (or none)
+```
+
+`Covers` lists every scene and bible item the memo speaks about.
+`Not revisited` lists what it covers that this run did not rework. Use
+scene numbers and item ids exactly as the scene index writes them; write
+`none` for an empty list.
+
 ## Work
 
 Develop only the character scope stated in the selected task. Separate
@@ -74,7 +123,7 @@ asking to absorb another package.
 ## Deliverable and handoff
 
 Write to `<film-root>/analysis/work/<task-id>-character-design.md`.
-Preserve existing human notes. Include task ID, scope, sources, established
+Preserve existing human notes. Start with the change-set header, then include task ID, scope, sources, established
 constraints, the structured design specification, design questions or
 options, unresolved decisions, downstream dependencies, limitations, and
 whether creator review is needed.

@@ -1,13 +1,14 @@
 ## 2. The specialists' state words differ
 
-- **Symptom:** the Visual Development Analyst and the Character Design
-  Planner use `established`; Story, Performance, Props and Sound use
-  `script-stated`; the Cinematography Planner has neither. The bible's
+- **Symptom:** the Story & Editorial Analyst, the Visual Development
+  Analyst and the Character Design Planner use `established`;
+  Performance, Props and Sound use `script-stated`; the Cinematography Planner has neither. The bible's
   value states (`mocap-contracts` `bible.harpia`, `ValueState`) are
   `script-stated`, `creator-approved`, `proposal`, `tbd`.
-- **Where:** `.claude/agents/visual-development-analyst.md:59`,
-  `.claude/agents/character-design-planner.md:66`,
-  `.claude/agents/cinematography-planner.md:68`.
+- **Where:** `.claude/agents/story-editorial-analyst.md:121`,
+  `.claude/agents/visual-development-analyst.md:108`,
+  `.claude/agents/character-design-planner.md:115`,
+  `.claude/agents/cinematography-planner.md:117`.
 - **Reproduce:** found by reading the code.
 - **Impact:** registers from different agents can't be compared or parsed
   the same way (the dashboard, the bible proposals of `preprod-link`).

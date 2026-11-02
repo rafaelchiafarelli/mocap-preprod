@@ -10,7 +10,8 @@ Claude agents; a Docker image runs the tests.
 folder (`README.md`, "Running the agents"); `python3 scripts/sync_agents.py`
 after editing an agent; `make test` for the test suite.
 
-**Inputs → Outputs:** a film root (script and creative materials) →
+**Inputs → Outputs:** a film root kept by `mocap-writer` (script, scene
+index, bible, annotations, creative materials) →
 Markdown under `<film-root>/analysis/` (readiness report, brief, worklist,
 memos). Nothing an agent writes lands in this repository.
 
@@ -43,9 +44,11 @@ memos). Nothing an agent writes lands in this repository.
   reads every `*.md` there as an agent and fails on one without
   frontmatter (`scripts/sync_agents.py:30`), and Claude Code loads agents
   from it. Its as-built lives in `agents.as-built.md` here.
-- The agents predate `mocap-writer`'s film root: they read the script as
-  `.docx`/PDF/text and write Markdown only; none reads `film.json`, the
-  bible or the scene index yet (planned: `initiatives/preprod-link/`).
+- The agents read the film root `mocap-writer` keeps (`film.json`, the
+  script, the scene index, the bible, annotations) and write Markdown
+  under `analysis/` only; proposals and requests to the writer are planned
+  (`initiatives/preprod-link/`). Formats come from the `mocap-contracts`
+  checkout beside this repository (`agents.as-built.md`).
 - "Not broken" for this repository: `make test` passes (it includes
   `sync_agents.py --check`), and links and referenced paths resolve.
 - `mocap-contracts` is not pinned: the image takes its newest release
