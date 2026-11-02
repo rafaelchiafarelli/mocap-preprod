@@ -1,9 +1,7 @@
 """preprod-link workflow-tool/1: the MCP server starts, answers and refuses."""
 
-import asyncio
 import json
 import os
-import shutil
 import sqlite3
 import subprocess
 import sys
@@ -11,73 +9,16 @@ from pathlib import Path
 
 import mocap_contracts as mc
 import pytest
-from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
-
-ROOT = Path(__file__).resolve().parent.parent
-FIXTURE = ROOT / "tests" / "fixtures" / "film"
-AGENT = "props-continuity-planner"
+from mcp_client import AGENT, ROOT, call as _call, session as _session, start as _start, text as _text
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import sync_agents  # noqa: E402
-
-
-def _copy(tmp_path) -> Path:
-    root = tmp_path / "film"
-    shutil.copytree(FIXTURE, root)
-    return root
-
-
-@pytest.fixture
-def plain_film(tmp_path):
-    """The fixture as the writer makes it: no workflow part yet."""
-    return _copy(tmp_path)
-
-
-@pytest.fixture
-def film_root(plain_film):
-    """The fixture with what mocap-writer workflow-link registers: the part and an agent's space."""
-    path = plain_film / "film.json"
-    film = mc.from_json(mc.Film, path.read_text())
-    film.parts.add(name="workflow", path="workflow.sqlite", owner="shared")
-    film.spaces.add(code="props", owner=AGENT)
-    path.write_text(mc.to_json(film))
-    return plain_film
-
-
-def _start(root) -> list[str]:
-    return [sys.executable, "-m", "workflow_tool", str(root)]
-
-
-def _session(root, use):
-    async def run():
-        params = StdioServerParameters(command=sys.executable, args=_start(root)[1:],
-                                       env=dict(os.environ), cwd=str(ROOT))
-        async with stdio_client(params) as (read, write):
-            async with ClientSession(read, write) as session:
-                await session.initialize()
-                return await use(session)
-    return asyncio.run(asyncio.wait_for(run(), 60))
-
-
-def _call(root, tool, **args):
-    return _session(root, lambda s: s.call_tool(tool, args))
-
-
-def _text(result) -> str:
-    return "".join(c.text for c in result.content)
 
 
 def test_starts_on_the_fixture_and_answers_film_spaces(film_root):
     result = _call(film_root, "film_spaces", agent=AGENT)
     assert not result.is_error, _text(result)
     assert result.structured_content["result"] == [{"agent": AGENT, "space": "props"}]
-
-
-def test_read_tools_only(film_root):
-    async def tools(session):
-        return (await session.list_tools()).tools
-    assert [t.name for t in _session(film_root, tools)] == ["film_spaces"]
 
 
 def test_start_makes_the_database_with_its_tables(film_root):
