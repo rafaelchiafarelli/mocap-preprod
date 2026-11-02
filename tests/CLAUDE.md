@@ -41,6 +41,9 @@ mocap-contracts → pass/fail; the header names the mocap-contracts tag.
   proposal against the contract, ids and counters, units and scenes, each
   refusal (no item, outside the departments, an unregistered agent, the
   catalog, the rules, a rejected value), reviews listed, the bible untouched.
+- `test_workflow_requests.py` — the request tools: a round trip between two
+  agents, the answer refused to anyone but the recipient and refused twice, a
+  request to the creator not answered here, each refusal, shared counters.
 - `fixtures/` — test data (its own `CLAUDE.md`).
 
 ## Key facts / gotchas

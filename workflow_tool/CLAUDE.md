@@ -1,8 +1,9 @@
 # workflow_tool — the agents' MCP server
 
 **Role:** the agents' only way into the film's workflow database: a stdio
-MCP server on one film root. Tools: `film_spaces`, `propose`,
-`my_proposals`.
+MCP server on one film root. Tools: `film_spaces`, `propose`, `my_proposals`,
+`send_request`, `my_requests`, `answer_request`. No agent lists them yet:
+that is `initiatives/preprod-link` agents/3 and 4.
 
 **Entry points:** `docker/mcp.sh <film-root>` (what `.mcp.json` and
 `.vscode/mcp.json` start), which runs `python -m workflow_tool <film-root>`
@@ -23,11 +24,15 @@ Nothing lands in this repository, which is mounted read-only, or in the bible.
   (`:34`), `read_film` (`:41`), `part_path` (`:53`), `open_database` (`:60`),
   `database` (`:65`), `agent_spaces` (`:74`), `check_agent` (`:79`), `has_item`
   (`:87`), `new_id` (`:102`), `save_counter` (`:112`), `proposed_value`
-  (`:127`), `was_rejected` (`:156`), `proposal_row` (`:173`), and `make_server`
-  (`:185`) with the tools: `film_spaces(agent)` (`:189`), the agents and their
-  space codes; `propose(agent, item, field, value, source, scene?, note?,
-  change_set?)` (`:199`), one proposal, returns its id; `my_proposals(agent,
-  open_only?)` (`:233`), the caller's proposals, each with its review.
+  (`:127`), `was_rejected` (`:156`), `proposal_row` (`:173`), `request_row` (`:185`), and
+  `make_server` (`:194`) with the tools: `film_spaces(agent)` (`:198`), the
+  agents and their space codes; `propose(agent, item, field, value, source,
+  scene?, note?, change_set?)` (`:208`), one proposal, returns its id;
+  `my_proposals(agent, open_only?)` (`:242`), the caller's proposals, each with
+  its review; `send_request(agent, to, items, scenes, what, source)` (`:258`),
+  returns its id; `my_requests(agent)` (`:287`), `to_me` (open, addressed to it)
+  and `answers` (to the ones it sent); `answer_request(agent, id, status,
+  answer)` (`:306`), by the recipient, `done` or `declined`, once.
 
 ## Key facts / gotchas
 
@@ -49,7 +54,7 @@ Nothing lands in this repository, which is mounted read-only, or in the bible.
   agent name; an agent outside it proposes nothing, and nobody owns `capture`.
   Space codes come from `film.json`, never from here.
 - `propose` has no `unit` argument: a number takes the catalog field's unit
-  (`:142-143`), so an agent can't give a value in another one.
+  (`:141-142`), so an agent can't give a value in another one.
 - A rejection stops the same item, field, scene and value from any agent, not
   only the one who proposed it (`:156-166`). Only `rejected` stops it.
 - A number is taken from `ids/<code>.json`, and the counter is written after
@@ -58,6 +63,10 @@ Nothing lands in this repository, which is mounted read-only, or in the bible.
 - `has_item` scans the map's `item.json` files on each `propose`: a folder is
   named by its item's name, not its id, and thousands of proposals touch
   hundreds of items at most.
+- Requests are data: the tools' descriptions say so, and nothing runs on one.
+  A request to the creator is answered in the writer, never here: `creator`
+  has no space, so it can't call these tools. Items and scenes may be empty,
+  as a missing item has no id yet and `what` says it.
 - Two agents running at once race on the counter: the same limit as the
   database, one program writes at a time.
 
@@ -65,5 +74,5 @@ Nothing lands in this repository, which is mounted read-only, or in the bible.
 
 - `mocap_contracts` (`film`, `bible`, `db`, the messages), from the image.
 - `docker/mcp.sh`, `.mcp.json`, `.vscode/mcp.json`, `tests/test_workflow_tool.py`,
-  `tests/test_workflow_proposals.py`.
+  `tests/test_workflow_proposals.py`, `tests/test_workflow_requests.py`.
 - `mocap-writer` `workflow-link` registers the part and the agents' spaces.

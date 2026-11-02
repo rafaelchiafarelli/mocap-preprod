@@ -21,6 +21,13 @@ def test_starts_on_the_fixture_and_answers_film_spaces(film_root):
     assert result.structured_content["result"] == [{"agent": AGENT, "space": "props"}]
 
 
+def test_the_tools_on_offer(film_root):
+    async def tools(session):
+        return {t.name for t in (await session.list_tools()).tools}
+    assert _session(film_root, tools) == {"film_spaces", "propose", "my_proposals", "send_request",
+                                          "my_requests", "answer_request"}
+
+
 def test_start_makes_the_database_with_its_tables(film_root):
     _call(film_root, "film_spaces", agent=AGENT)
     conn = sqlite3.connect(film_root / "workflow.sqlite")

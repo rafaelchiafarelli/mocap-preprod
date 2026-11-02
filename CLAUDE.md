@@ -51,8 +51,9 @@ memos). Nothing an agent writes lands in this repository.
   from it. Its as-built lives in `agents.as-built.md` here.
 - The agents read the film root `mocap-writer` keeps (`film.json`, the
   script, the scene index, the bible, annotations) and write Markdown
-  under `analysis/` only; proposals and requests to the writer are planned
-  (`initiatives/preprod-link/`). Formats come from the `mocap-contracts`
+  under `analysis/` only; the tool for proposals and requests to the writer
+  exists (`workflow_tool/`), and no agent lists it yet
+  (`initiatives/preprod-link/` agents/3 and 4). Formats come from the `mocap-contracts`
   checkout beside this repository (`agents.as-built.md`).
 - "Not broken" for this repository: `make test` passes (it includes
   `sync_agents.py --check`), and links and referenced paths resolve.
